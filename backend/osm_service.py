@@ -23,7 +23,17 @@ def get_resources(latitude, longitude, radius=2000):
 
     """
 
-    response = requests.post(OVERPASS_API_URL, data={"data": query}, timeout = 600)
+
+    headers = {
+        "User-Agent": "ReRoute-HackRU/1.0 (contact: adiptashfi@gmail.com)",
+        "Accept": "application/json"
+    }
+
+    response = requests.post(OVERPASS_API_URL, data={"data": query}, headers = headers   , timeout = 600)
+
+    if response.status_code != 200:
+        print("Error response:", response.text[:1000])
+
     response.raise_for_status()
     data = response.json()
     resources = []
@@ -50,7 +60,7 @@ def get_resources(latitude, longitude, radius=2000):
             amenities = "Restroom"
 
         elif amenities == "recycling":
-            amenities = "Recycling Center"
+            amenities = "Recycling Location"
 
         
 
@@ -61,8 +71,13 @@ def get_resources(latitude, longitude, radius=2000):
     return resources
 
             
-
+if __name__ == "__main__":
+    latitude = 40.7580
+    longitude = -73.9855
+    resources = get_resources(latitude, longitude)
+    for resource in resources:
+        print(resource)
       
-        
+
         
         
