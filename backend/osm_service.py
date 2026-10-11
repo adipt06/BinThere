@@ -15,9 +15,11 @@ logger = logging.getLogger(__name__)
 try:
     from .services import ServiceError, TTLCache, request_json
     from . import local_facilities as local
+    from . import community_store as community
 except ImportError:
     from services import ServiceError, TTLCache, request_json
     import local_facilities as local
+    import community_store as community
 
 OVERPASS_API_URL = os.getenv('OVERPASS_API_URL', 'https://overpass.private.coffee/api/interpreter')
 OVERPASS_ALT_URL = os.getenv('OVERPASS_ALT_URL', 'https://overpass-api.de/api/interpreter')
@@ -131,7 +133,7 @@ def _fetch_uncached(query, *, query_specific=False, budget=None):
         try:
             data = request_json('post', endpoint, service='Overpass', attempts=1,
                                 data={'data': query}, timeout=(3, min(100, max(1, budget['deadline'] - started))) if budget else (3, 100),
-                                headers={'User-Agent': os.getenv('OVERPASS_USER_AGENT', 'ReRoute-HackRU/1.0 (environmental walking navigation)'),
+                                headers={'User-Agent': os.getenv('OVERPASS_USER_AGENT', 'BinThere-HackRU/1.0 (environmental walking navigation)'),
                                          'Accept': 'application/json'})
             if data.get('remark'):
                 raise ServiceError('Overpass could not complete the search.', 504, reason='runtime')
@@ -229,7 +231,7 @@ def _within(resources, latitude, longitude, radius, category=None):
                  and _distance(latitude, longitude, r['latitude'], r['longitude']) <= radius}.values())
 
 
-def get_resources_report(latitude, longitude, radius=2000, facility_type=None):
+def _osm_resources_report(latitude, longitude, radius=2000, facility_type=None):
     """Explicit per-category coverage; failed searches are never successful empty lists."""
     categories = [facility_type] if facility_type else list(AMENITY_TAGS)
     if any(c not in AMENITY_TAGS for c in categories):
@@ -363,7 +365,7 @@ def _live_resources_along_route(coordinates, radius=200, facility_type=None):
     return fetch_overpass(query, budget={"remaining": 3, "deadline": time.monotonic() + 100})
 
 
-def get_resources_along_route(coordinates, radius=200, facility_type=None):
+def _osm_resources_along_route(coordinates, radius=200, facility_type=None):
     global _snapshot_fallback_until
     if not coordinates:
         return []
@@ -385,3 +387,62 @@ def get_resources_along_route(coordinates, radius=200, facility_type=None):
             raise
         _snapshot_fallback_until = time.monotonic() + 30
         return local.corridor(match[0], coordinates, radius, facility_type, match[1])
+
+
+COMMUNITY_WARNING = 'Community submissions: public access, location and opening hours are unverified.'
+
+
+def get_resources_report(latitude, longitude, radius=2000, facility_type=None):
+    community_error = None
+    try:
+        additions = community.nearby(latitude, longitude, radius, facility_type)
+    except ServiceError as error:
+        additions, community_error = [], error
+    try:
+        report = _osm_resources_report(latitude, longitude, radius, facility_type)
+    except ServiceError as error:
+        if not additions or error.status == 422:
+            raise
+        categories = [facility_type] if facility_type else list(AMENITY_TAGS)
+        report = {'facilities':[], 'categories':{c:{'status':'failed','count':None,
+                  'searched_radius':0,'warning':str(error)} for c in categories},
+                  'warnings':[str(error)], 'partial':True, 'complete':False,
+                  'requested_radius':radius, 'coverage':'partial', 'data_mode':local.mode()}
+    if additions:
+        report['facilities'] = list({f['id']:f for f in [*report['facilities'], *additions]}.values())
+        report['warnings'] = [*report['warnings'], COMMUNITY_WARNING]
+        for category, state in report['categories'].items():
+            count = sum(f['type']==category for f in additions)
+            state['community_count'] = count
+            if state.get('count') is not None: state['count'] += count
+    if community_error:
+        report['warnings'] = [*report['warnings'], 'Community facilities could not be loaded: ' + str(community_error)]
+        report.update(partial=True, complete=False, coverage='partial')
+    return report
+
+
+class CommunityCorridor(list):
+    def __init__(self, original, additions, error=None):
+        super().__init__([*original,*additions])
+        self.complete = False if error else getattr(original,'complete',True)
+        self.coverage = 'partial' if error else getattr(original,'coverage','full')
+        self.warnings = [*getattr(original,'warnings',[]), COMMUNITY_WARNING]
+        if error: self.warnings.append(str(error))
+
+
+def get_resources_along_route(coordinates, radius=200, facility_type=None):
+    community_error = None
+    try:
+        additions = community.corridor(coordinates, radius, facility_type)
+    except ServiceError as error:
+        additions, community_error = [], error
+    try:
+        original = _osm_resources_along_route(coordinates, radius, facility_type)
+    except ServiceError as error:
+        if not additions or error.status == 422: raise
+        return CommunityCorridor([],additions,error)
+    if community_error:
+        result = CommunityCorridor(original, [], community_error)
+        result.warnings = [*getattr(original, 'warnings', []), 'Community facilities could not be loaded: ' + str(community_error)]
+        return result
+    return CommunityCorridor(original, additions) if additions else original

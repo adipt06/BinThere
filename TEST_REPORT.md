@@ -1,4 +1,4 @@
-# ReRoute intensive verification — 2026-10-11
+# BinThere intensive verification — 2026-10-11
 
 Production code was unchanged during this run. Added `backend/tests/test_discovery_matrix.py` for broader offline verification. No credentials were logged and no production facilities were fabricated.
 

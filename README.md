@@ -1,4 +1,4 @@
-# ReRoute — Smart Navigation
+# BinThere — Smart Navigation
 
 A FastAPI + vanilla JavaScript/Vite application with a full-screen Mapbox map. Discover real OpenStreetMap trash bins, recycling locations, and restrooms; compare direct walking directions with a route through a requested facility.
 
@@ -29,6 +29,21 @@ FACILITY_DATA_MODE=local_only .venv/bin/python -m uvicorn backend.main:app --hos
 cd frontend
 REROUTE_LOCAL_ONLY_SMOKE=true REROUTE_SMOKE_API=http://127.0.0.1:8012 node tests/live-facilities.mjs
 ```
+
+## AI Waste Assistant
+
+The AI Waste Assistant tab accepts a photo, text question or both, plus optional city/ZIP. Choose, drop or paste JPEG/PNG/WebP images up to 8 MB / 20 megapixels. Photos are compressed in the browser and validated/re-encoded on the backend; questions/photos are sent to Google Gemini and are not permanently stored by BinThere. Results show multiple recognized items, apparent materials, disposal steps, tips and uncertainty. City/ZIP does not establish verified local regulations.
+
+Install updated dependencies with `.venv/bin/python -m pip install -r backend/requirements-dev.txt`. Add a **fresh** server-only key to `backend/.env` and restart FastAPI:
+
+```dotenv
+GEMINI_API_KEY=YOUR_NEW_PRIVATE_KEY
+GEMINI_MODEL=gemini-3.8-flash
+```
+
+Never expose this key in frontend variables or reuse the exposed reference key. The default supports image/text input and structured output according to [Google's model documentation](https://ai.google.dev/gemini-api/docs/models/gemini-3.8-flash); the backend also checks model availability before analysis. With no key, navigation remains usable and analysis returns a clear configuration error.
+
+`POST /ai/analyze` accepts multipart `image`, `question` and `place`; image or question is required. Strict validated JSON includes `answer`, `summary`, `items` (name/material/bin/steps/tip), and `unsure`. General recycling and nonhazardous trash actions return to the existing navigation tab and facility filters without clearing the trip or route. Battery, hazardous, e-waste and special-drop-off results can browse general recycling locations with explicit unverified-acceptance notices. Recycling actions search up to 10 miles and focus the closest eligible mapped location by straight-line distance; walking directions remain available from its details. Compost, donation and unknown results do not imply a suitable collection site. Facility acceptance and access remain unverified. See [AI_ASSISTANT_REPORT.md](AI_ASSISTANT_REPORT.md) for reference-code analysis, API details, test results, fresh-key smoke commands and limitations.
 
 ## Run locally
 
@@ -78,7 +93,7 @@ Build with `npm run build` inside `frontend`. Serve `frontend/dist` with SPA/sta
 1. Use GPS, pick a blue start marker on the map, or submit a starting address/place search.
 2. Select a red destination with map selection or a separate destination search.
 3. Get a direct walking route (blue), or select a desired stop and detour limit to optimize (green).
-4. Inspect facility details, OSM metadata, route comparison, and search warnings. An orange marker highlights the recommendation.
+4. Use **Get walking directions** directly on any facility card (or map popup); selecting another card replaces the destination and route immediately. The facility name opens its details and OSM metadata. Inspect route comparisons and search warnings. An orange marker highlights the recommendation.
 5. Clear displayed route retains trip locations. Clear destination removes its marker and route. Reset trip cancels requests and removes all trip/facility markers.
 
 Place search uses Mapbox Search Box `/forward` on explicit form submission, supporting addresses and points of interest. Results are used in the current interface only, not persisted or cached. Coverage depends on Mapbox's supported regions. Nearby-facility text filtering is a separate control.
@@ -210,3 +225,65 @@ REROUTE_SNAPSHOT_SMOKE=true REROUTE_SMOKE_API=http://127.0.0.1:8012 node tests/l
 This forces only Overpass failure; it uses the actual included snapshot and real Mapbox. It is a saved-data/real-routing check, not a fully live Overpass success. Stop the test server after verification. Ordinary `.env` and port8000 behavior are unaffected. Route discovery also has a100-second aggregate budget before trying local fallback, so several slow providers cannot delay it indefinitely.
 
 Latest implementation, real-data counts, coverage and test outcomes: [FACILITY_RECOVERY_REPORT.md](FACILITY_RECOVERY_REPORT.md).
+
+
+### Community facilities
+
+Open the **Contribute** tab. Take/upload a JPEG, PNG or WebP,
+click **Identify facility with Gemini**, select GPS or a matching street-address result,
+confirm the facility is public and at that location, and publish. Gemini recognizes
+Trash Bin, Restroom or Recycling Location; ambiguous photos cannot be published.
+Community points have their own source label, appear on the map and in nearby searches,
+and participate in nearest-bin searches and walking-route optimization.
+
+Records and reports persist in gitignored `backend/data/community.sqlite3`. Photos are
+processed in memory, sent to Gemini, and discarded. Existing OSM data is unchanged.
+Click a community facility's details to report missing, fraudulent or private facilities.
+Three distinct signed browser identities hide a facility by default; configure
+`COMMUNITY_REPORT_THRESHOLD` (3–20) to change this. Duplicate reports from the same
+browser do not count. Hiding is an atomic database update and immediately affects new
+searches and optimization. Anonymous browser identities are not verified people;
+production deployment needs accounts and stronger moderation to resist brigading.
+Network hashes rate-limit image recognition (12/hour), address searches (30/hour),
+submission attempts (10/hour), and reports (20/day). No raw IPs are stored.
+
+Address submissions use Mapbox Geocoding v6 with `permanent=true`, rather than persisting
+temporary Search Box results. This requires a Mapbox account with a credit card on file
+or an enterprise contract; see [Mapbox storage requirements](https://docs.mapbox.com/api/search/geocoding/#storing-geocoding-results).
+If address lookup is unavailable, GPS submissions still work. No additional Gemini key
+is needed: this feature uses the existing server-only `GEMINI_API_KEY` and `GEMINI_MODEL`.
+Use a persistent writable volume for SQLite when deploying (one shared backend instance,
+not separate ephemeral databases). These submissions live in BinThere and are not edits to OSM.
+
+
+The interface separates **Explore**, **AI guide**, and **Contribute** into persistent tabs.
+Explore groups starting-location controls together, places filters with nearby results,
+and keeps optional destination/detour controls under **Plan a walk**. Tab changes preserve
+the trip and form state. All three tabs support arrow keys, Home, and End. On small screens,
+use **Hide controls** to work with the map and **Show controls** to return to the panel.
+
+### Recognition failures and quota limits
+
+Both image flows show progress/elapsed time and readable errors beside their recognition
+controls. Failed requests retain the selected photo for manual retry; changing an input
+explicitly cancels the pending display. Slow image decoding has a 15-second preparation
+limit. Requests keep the existing 100-second upstream read timeout and 270-second browser
+limit, allowing one retry for invalid structured output; quota failures are never retried
+automatically.
+
+Successful Gemini analyses are cached in memory for five minutes (32 entries), keyed by
+normalized image/input, prompt/schema, model, and hashed backend credentials. Raw photos
+and questions are not retained in this cache. A quota response briefly suppresses further
+upstream requests (at most 60 seconds, or a shorter provider delay); cached successes remain
+available. `/ai/analyze` and `/community/recognize` distinguish daily quota exhaustion from
+short-term throttling, returning HTTP 429, a safe `code`, and `Retry-After` when supplied.
+Do not replace the API key in the same Google project to work around a project-level limit.
+Review [Gemini project rate limits and billing](https://ai.google.dev/gemini-api/docs/rate-limits).
+
+A limited live diagnostic on October 11, 2026 returned `429 RESOURCE_EXHAUSTED` for
+`gemini-3.8-flash`, with quota ID `GenerateRequestsPerDayPerProjectPerModel-FreeTier`,
+quota value `20`, and a provider retry delay of `55262s` at the time of that request.
+The blank-image assistant test and one minimal text diagnostic both failed with HTTP 429;
+no successful recognition is claimed for that run. Live recognition requires the quota to
+reset or the project's billing/quota to be upgraded. Automated regression tests mock the
+provider and verify UI recovery, caching, quota details, and preservation of selected photos.

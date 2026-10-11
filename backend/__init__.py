@@ -1,1 +1,1 @@
-"""ReRoute navigation API."""
+"""BinThere navigation API."""

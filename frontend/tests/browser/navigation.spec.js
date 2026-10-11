@@ -27,6 +27,7 @@ async function setup(page, gps = 'denied') {
   });
   await page.goto('/');
   await expect(page.locator('#choose-start-button')).toBeEnabled();
+  await page.locator('#route-planner summary').click();
 }
 async function choose(page, kind) {
   await page.locator(`#choose-${kind}-button`).click();
@@ -203,7 +204,7 @@ test('saved OSM facilities show source warnings, cards, markers and metadata', a
   expect(await markerCount(page,'#216b49')).toBe(1);
   expect(await markerCount(page,'#8054c8')).toBe(1);
   await page.locator('#facility-filter').selectOption('Restroom');
-  await page.locator('#bin-results button').click();
+  await page.locator('#bin-results .facility-card-details').click();
   await expect(page.locator('#facility-details')).toContainText('retrieved 2026-01-01');
   await page.locator('#reset-trip-button').click();
   await expect(page.locator('#facility-warnings')).toBeEmpty();
@@ -234,4 +235,27 @@ test('successfully empty saved search still displays source details', async ({pa
   await expect(page.locator('#facility-warnings')).toContainText('Showing saved OpenStreetMap');
   await expect(page.locator('#facility-source-details')).toBeVisible();
   await expect(page.locator('.bin-card')).toHaveCount(0);
+});
+
+test('any facility in the list has immediate directions without opening preceding cards', async ({page}) => {
+  await setup(page,'allowed');
+  const places=Array.from({length:5},(_,i)=>({...facility,id:`node/${i+20}`,name:`Location ${i+1}`,latitude:40.501+i*.001,longitude:-74.001-i*.001}));
+  await page.route('**/api/resources?*',r=>r.fulfill({json:places}));
+  await page.locator('#distance-filter').selectOption('2000');await expect(page.locator('.bin-card')).toHaveCount(5);
+  await expect(page.locator('#facility-details')).toBeHidden();
+  const request=page.waitForRequest(r=>new URL(r.url()).pathname.endsWith('/route'));
+  await page.getByRole('button',{name:'Get walking directions to Location 5',exact:true}).click();
+  const query=new URL((await request).url()).searchParams;
+  expect(Number(query.get('end_lat'))).toBe(places[4].latitude);expect(Number(query.get('end_lon'))).toBe(places[4].longitude);
+  await expect(page.locator('#directions-section')).toBeVisible();await expect(page.locator('#destination-hint')).toContainText('Location 5');
+  await page.getByRole('button',{name:'Get walking directions to Location 2',exact:true}).click();
+  await expect(page.locator('#destination-hint')).toContainText('Location 2');await expect(page.locator('#directions-section')).toBeVisible();
+});
+
+test('direct facility directions buttons remain usable on mobile', async ({page}) => {
+  await page.setViewportSize({width:390,height:844});await setup(page,'allowed');
+  await page.getByRole('button',{name:'Get walking directions to Campus Restroom',exact:true}).click();
+  await expect(page.locator('#destination-hint')).toContainText('Campus Restroom');
+  await expect.poll(()=>page.evaluate(()=>window.__map.sources['direct-route'].data.type)).toBe('Feature');
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth)).toBe(true);
 });
