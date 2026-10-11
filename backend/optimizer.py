@@ -131,7 +131,37 @@ def find_best_route(
             best_route = alternative
             best_facility = facility
 
+    if best_route is not None:
+        summary = {
+            "direct_distance_meters": round(direct_route["distance"], 2),
+            "direct_duration_minutes": round(direct_route["duration"] / 60, 2),
+            "optimized_distance_meters": round(best_route["distance"], 2),
+            "optimized_duration_minutes": round(best_route["duration"] / 60, 2),
+            "extra_distance_meters": round(
+                best_route["distance"] - direct_route["distance"], 2
+            ),
+            "detour_minutes": round(best_detour / 60, 2),
+            "detour_seconds": round(best_detour, 2),
+            "facility_type": best_facility["type"],
+            "facility_latitude": best_facility["latitude"],
+            "facility_longitude": best_facility["longitude"]
+        }
+    else:
+        summary = {
+            "direct_distance_meters": round(direct_route["distance"], 2),
+            "direct_duration_minutes": round(direct_route["duration"] / 60, 2),
+            "optimized_distance_meters": None,
+            "optimized_duration_minutes": None,
+            "extra_distance_meters": None,
+            "detour_minutes": None,
+            "detour_seconds": None,
+            "facility_type": None,
+            "facility_latitude": None,
+            "facility_longitude": None
+        }
+
     return {
+        "summary": summary,
         "direct_route": direct_route,
         "optimized_route": best_route,
         "facility": best_facility,
