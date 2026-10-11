@@ -1,4 +1,3 @@
-
 import requests
 
 OVERPASS_API_URL = "https://overpass-api.de/api/interpreter"
@@ -10,55 +9,26 @@ AMENITY_TAGS = {
 }
 
 
-def fetch_resources(points, radius, facility_type=None):
-
-    query_parts = []
-
-    if facility_type is not None:
-        amenities = [AMENITY_TAGS[facility_type]]
-    else:
-        amenities = ["waste_basket", "toilets", "recycling"]
-
-    for latitude, longitude in points:
-        for amenity in amenities:
-
-            selector = "node" if amenity == "waste_basket" else "nwr"
-
-            query_parts.append(
-                f'{selector}["amenity"="{amenity}"]'
-                f'(around:{radius},{latitude},{longitude});'
-            )
-
-    query = (
-        "[out:json][timeout:30];"
-        "(" + "".join(query_parts) + ");"
-        "out center;"
-    )
-
-    headers = {
-        "User-Agent": "ReRoute-HackRU/1.0",
-        "Accept": "application/json"
-    }
+def fetch_overpass(query):
 
     response = requests.post(
         OVERPASS_API_URL,
         data={"data": query},
-        headers=headers,
-        timeout=40
+        headers={
+            "User-Agent": "ReRoute-HackRU/1.0",
+            "Accept": "application/json"
+        },
+        timeout=35
     )
 
     if response.status_code != 200:
-        print("Overpass error:", response.text[:1000])
+        print("Overpass error:", response.text[:500])
 
     response.raise_for_status()
 
-    data = response.json()
     resources = {}
 
-    for element in data["elements"]:
-
-        osm_type = element.get("type")
-        osm_id = element.get("id")
+    for element in response.json().get("elements", []):
 
         center = element.get("center") or {}
 
@@ -69,52 +39,55 @@ def fetch_resources(points, radius, facility_type=None):
             continue
 
         amenity = element.get("tags", {}).get("amenity")
-        name = element.get("tags", {}).get("name", "Unknown")
 
-        if amenity == "waste_basket":
-            amenity = "Trash Bin"
+        names = {
+            "waste_basket": "Trash Bin",
+            "toilets": "Restroom",
+            "recycling": "Recycling Location"
+        }
 
-        elif amenity == "toilets":
-            amenity = "Restroom"
-
-        elif amenity == "recycling":
-            amenity = "Recycling Location"
-
-        else:
+        if amenity not in names:
             continue
 
-        resource_id = f"{osm_type}/{osm_id}"
+        resource_id = f'{element["type"]}/{element["id"]}'
 
-        resource = {
+        resources[resource_id] = {
             "id": resource_id,
-            "name": name,
-            "type": amenity,
+            "name": element.get("tags", {}).get("name", "Unknown"),
+            "type": names[amenity],
             "latitude": lat,
             "longitude": lon
         }
-
-        resources[resource_id] = resource
 
     return list(resources.values())
 
 
 def get_resources(latitude, longitude, radius=2000):
-    return fetch_resources(
-        [(latitude, longitude)],
-        radius
-    )
+
+    query = f"""
+    [out:json][timeout:25];
+    (
+        node["amenity"="waste_basket"](around:{radius},{latitude},{longitude});
+        nwr["amenity"="toilets"](around:{radius},{latitude},{longitude});
+        nwr["amenity"="recycling"](around:{radius},{latitude},{longitude});
+    );
+    out center;
+    """
+
+    return fetch_overpass(query)
 
 
 def get_resources_along_route(
     coordinates,
-    radius=350,
+    radius=200,
     facility_type=None
 ):
 
     if not coordinates:
         return []
 
-    count = min(6, len(coordinates))
+    # Limit how many points are included in the query
+    count = min(20, len(coordinates))
 
     if count == 1:
         indices = [0]
@@ -124,11 +97,36 @@ def get_resources_along_route(
             for i in range(count)
         })
 
-    points = []
+    route_points = []
 
     for index in indices:
         lon, lat = coordinates[index]
-        points.append((lat, lon))
+        route_points.append(f"{lat},{lon}")
 
-    return fetch_resources(points, radius, facility_type)
+    # One route corridor instead of many separate searches
+    path = ",".join(route_points)
+
+    if facility_type is not None:
+
+        amenity = AMENITY_TAGS[facility_type]
+        selector = "node" if amenity == "waste_basket" else "nwr"
+
+        query = f"""
+        [out:json][timeout:25];
+        {selector}["amenity"="{amenity}"](around:{radius},{path});
+        out center;
+        """
+
+    else:
+        query = f"""
+        [out:json][timeout:25];
+        (
+            node["amenity"="waste_basket"](around:{radius},{path});
+            nwr["amenity"="toilets"](around:{radius},{path});
+            nwr["amenity"="recycling"](around:{radius},{path});
+        );
+        out center;
+        """
+
+    return fetch_overpass(query)
 
