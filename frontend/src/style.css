@@ -487,3 +487,30 @@ select:focus-visible {
     right: 10px;
   }
 }
+
+/* Navigation controls */
+[hidden] { display: none !important; }
+button:disabled { cursor: wait; opacity: .6; }
+.place-search { display: grid; gap: 8px; }
+.place-search .search-box { padding: 5px; height: auto; }
+.place-search input { min-width: 0; width: 100%; border: 0; background: transparent; padding: 10px; }
+.place-search button { border: 0; border-radius: 8px; color: white; background: var(--green); padding: 10px; }
+.place-results { display: grid; gap: 6px; font-size: 12px; }
+.place-results small { color: #59665d; }
+.destination-controls select { min-height: 44px; border: 1px solid var(--border); border-radius: 10px; padding: 10px; background: white; }
+#panel-toggle { position: fixed; z-index: 20; top: 18px; left: 405px; border: 1px solid var(--border); border-radius: 10px; padding: 12px; background: white; color: var(--green); }
+#bin-panel.collapsed { display: none; }
+#route-comparison { overflow-x: auto; font-size: 11px; }
+#route-comparison table { width: 100%; border-collapse: collapse; text-align: left; }
+#route-comparison th, #route-comparison td { padding: 8px 4px; border-bottom: 1px solid #c9ddce; }
+.status-message { position: sticky; bottom: -24px; padding: 12px 0; background: white; color: #435249; }
+@media (max-width: 600px) {
+  #panel-toggle { top: 10px; left: 10px; min-height: 44px; }
+  #bin-panel { top: 64px; bottom: 10px; width: calc(100vw - 20px); max-height: calc(100dvh - 74px); }
+  .mapboxgl-ctrl-top-right { top: 10px; bottom: auto; }
+  .status-message { bottom: -18px; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; } }
+#cancel-selection-button { position: fixed; top: 70px; right: 20px; width: auto; z-index: 25; background: white; }
+.map-status { position: fixed; bottom: 12px; left: 405px; right: 70px; z-index: 15; padding: 10px 14px; margin: 0; border-radius: 12px; background: rgba(255,255,255,.97); color: #435249; font-size: 12px; pointer-events: none; }
+@media (max-width: 600px) { .map-status { left: 10px; right: 10px; bottom: 10px; } #cancel-selection-button { top: 10px; right: 100px; max-width: 150px; min-height: 44px; padding: 5px; } }

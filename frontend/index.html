@@ -24,7 +24,7 @@
 
     <div id="map" aria-label="Interactive ReRoute map"></div>
 
-    <aside id="bin-panel">
+    <button id="panel-toggle" type="button" aria-controls="bin-panel" aria-expanded="true">Hide controls</button><button id="cancel-selection-button" type="button" class="secondary-button" hidden>Cancel map selection</button><aside id="bin-panel">
 
       <header class="brand-row">
         <div class="brand-logo">♻</div>
@@ -47,22 +47,22 @@
         </p>
       </section>
 
-      <form id="search-form" class="search-box">
+      <section class="destination-controls"><h3>Your trip</h3><p id="start-hint" class="location-note">Choose a starting location.</p><form id="start-search-form" class="place-search"><label for="start-search">Start address or place</label><div class="search-box"><input id="start-search" minlength="2" maxlength="256" required placeholder="Address or place" /><button type="submit">Search</button></div></form><div id="start-search-results" class="place-results" aria-live="polite"></div><form id="destination-search-form" class="place-search"><label for="destination-search">Destination address or place</label><div class="search-box"><input id="destination-search" minlength="2" maxlength="256" required placeholder="Address or place" /><button type="submit">Search</button></div></form><div id="destination-search-results" class="place-results" aria-live="polite"></div><button id="choose-start-button" type="button" class="secondary-button">Pick start on map</button><button id="clear-destination-button" type="button" class="secondary-button">Clear destination</button><button id="reset-trip-button" type="button" class="secondary-button">Reset trip</button></section><form id="search-form" class="search-box">
         <span>⌕</span>
 
         <input
-          id="bin-search"
+          aria-label="Filter loaded facilities" id="bin-search"
           type="search"
           placeholder="Filter nearby facilities..."
         />
 
-        <button id="search-button" type="submit">→</button>
+        <button id="search-button" type="submit" aria-label="Filter facilities">→</button>
       </form>
 
       <div class="gui-actions">
 
         <button id="nearest-button" class="primary-button">
-          ◎ Find nearest trash bin
+          ◎ Find bin by walking time
         </button>
 
         <button id="my-location-button" class="secondary-button">
@@ -80,6 +80,7 @@
           <option value="1000" selected>1 kilometer</option>
           <option value="2000">2 kilometers</option>
           <option value="5000">5 kilometers</option>
+          <option value="16093">10 miles</option>
         </select>
 
         <label for="facility-filter">Facility type</label>
@@ -105,7 +106,7 @@
           Select a destination on the map to optimize your walk.
         </p>
 
-        <label for="detour-filter">
+        <button id="cancel-route-button" class="secondary-button" type="button" hidden>Cancel route request</button><button id="direct-route-button" class="secondary-button" type="button">Get direct walking route</button><label for="optimizer-facility">Visit on the way</label><select id="optimizer-facility"><option>Trash Bin</option><option>Restroom</option><option>Recycling Location</option></select><label for="detour-filter">
           Maximum extra walking (minutes)
         </label>
 
@@ -132,7 +133,7 @@
             <p id="directions-destination">Selected destination</p>
           </div>
 
-          <button id="clear-route-button" class="clear-button">
+          <button id="clear-route-button" class="clear-button" aria-label="Clear displayed route">
             ×
           </button>
         </div>
@@ -149,11 +150,11 @@
           </div>
         </div>
 
-        <p id="detour-info" class="location-note"></p>
+        <p id="trip-summary" class="location-note"></p><div id="route-comparison"></div><p id="route-warnings" class="location-note"></p><p id="detour-info" class="location-note"></p>
 
       </section>
 
-      <section class="results-section">
+      <section id="facility-details" class="destination-controls" hidden aria-label="Selected facility"></section><section class="results-section">
 
         <div class="results-heading">
           <div>
@@ -166,9 +167,10 @@
           </span>
         </div>
 
-        <div id="bin-results">
+        <p id="facility-warnings" class="location-note" role="status"></p>
+        <details id="facility-source-details" hidden><summary>Facility data details</summary><p id="facility-source-info" class="location-note"></p></details><div id="bin-results">
           <div class="empty-state">
-            Allow location access to discover facilities.
+            Use GPS or pick a start on the map to discover facilities.
           </div>
         </div>
 
@@ -179,10 +181,10 @@
       </p>
 
       <footer class="panel-footer">
-        ● A cleaner community starts here
+        Facilities © OpenStreetMap contributors · Access and hours are unverified.
       </footer>
 
-    </aside>
+    </aside><p id="map-status" class="map-status" role="status"></p>
 
   </main>
 </body>

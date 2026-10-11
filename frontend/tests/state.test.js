@@ -1,0 +1,10 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { RequestLane, validCoordinate, validateRoute, distance, filterFacilities } from '../src/state.js';
+test('new requests abort and invalidate old responses', () => { const lane = new RequestLane(), a = lane.begin(), b = lane.begin(); assert.equal(a.current(), false); assert.equal(a.signal.aborted, true); assert.equal(b.current(), true); });
+test('clearing invalidates responses and finalizers', () => { const lane = new RequestLane(), a = lane.begin(); lane.cancel(); assert.equal(a.current(), false); assert.equal(a.signal.aborted, true); });
+test('independent lanes do not cancel each other', () => { const a = new RequestLane(), b = new RequestLane(), ticket = a.begin(); b.cancel(); assert.equal(ticket.current(), true); });
+test('coordinate validation rejects wrong range and nonfinite inputs', () => { for (const p of [[181,0],[0,91],[NaN,1],['0',0],null,[1]]) assert.equal(validCoordinate(p), false); assert.equal(validCoordinate([-74,40]), true); });
+test('route response validation', () => { const route = {distance:1,duration:0,geometry:{type:'LineString',coordinates:[[0,0],[1,1]]}}; assert.equal(validateRoute(route),route); for (const r of [null,{}, {...route,duration:-1},{...route,geometry:{type:'Point',coordinates:[0,0]}}]) assert.throws(() => validateRoute(r)); });
+test('facility filtering and distance ordering', () => { const facilities = [{name:'Park',type:'Trash Bin',longitude:1,latitude:0},{name:'Campus',type:'Restroom',longitude:0,latitude:0}]; assert.equal(filterFacilities(facilities,'All','',[0,0])[0].name,'Campus'); assert.equal(filterFacilities(facilities,'Trash Bin','park',[0,0]).length,1); assert.equal(filterFacilities(facilities,'Restroom','park',[0,0]).length,0); });
+test('distance uses longitude latitude order', () => { assert.equal(distance([0,0],[0,0]),0); assert.ok(Math.abs(distance([0,0],[0,1])-111195)<1); });

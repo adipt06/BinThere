@@ -1,0 +1,4242 @@
+{
+  "schema_version": 1,
+  "name": "Piscataway / New Brunswick area",
+  "bbox": [
+    -74.64836155433552,
+    40.389258216944434,
+    -74.26749844566449,
+    40.67872178305557
+  ],
+  "categories": [
+    "Trash Bin",
+    "Restroom",
+    "Recycling Location"
+  ],
+  "retrieved_at": "2026-10-11T05:29:10.261149+00:00",
+  "data_timestamp": "2026-10-09T20:21:04Z",
+  "source": {
+    "kind": "osm_extract",
+    "url": "https://download.geofabrik.de/north-america/us/new-jersey-261009.osm.pbf",
+    "extract_sha256": "043f771e8d4329c79823417b4017823337e6b1e6b1b95e779f75ea2aa7b97efb",
+    "sha256": "a3ea1b09dd9dba011ac9d971a737787b8580d46e84e27fd3944580c92c129c99"
+  },
+  "license": "ODbL-1.0",
+  "attribution": "© OpenStreetMap contributors",
+  "warnings": [
+    "OSM coverage, public access, opening hours and area entrances are not guaranteed."
+  ],
+  "facilities": [
+    {
+      "id": "node/670492097",
+      "name": "Piscataway Recycling Center",
+      "type": "Recycling Location",
+      "latitude": 40.5398373,
+      "longitude": -74.4684131,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "recycling",
+        "name": "Piscataway Recycling Center",
+        "recycling_type": "centre"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/1114438287",
+      "name": "Unknown",
+      "type": "Restroom",
+      "latitude": 40.4164158,
+      "longitude": -74.443784,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "toilets"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/1277794480",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.626579,
+      "longitude": -74.3375227,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "recycling"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/1308392613",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.5785661,
+      "longitude": -74.4986119,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "recycling"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/1670345779",
+      "name": "Unknown",
+      "type": "Restroom",
+      "latitude": 40.6290636,
+      "longitude": -74.3398052,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "toilets"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/1826179348",
+      "name": "Unknown",
+      "type": "Restroom",
+      "latitude": 40.668823,
+      "longitude": -74.4032956,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "toilets"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/1959861883",
+      "name": "Somerset County Recycling",
+      "type": "Recycling Location",
+      "latitude": 40.5566075,
+      "longitude": -74.5726101,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "recycling",
+        "name": "Somerset County Recycling",
+        "recycling_type": "centre"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/2029402424",
+      "name": "Unknown",
+      "type": "Restroom",
+      "latitude": 40.6314884,
+      "longitude": -74.3379837,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "toilets"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/2126021266",
+      "name": "Unknown",
+      "type": "Restroom",
+      "latitude": 40.5106407,
+      "longitude": -74.5730797,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "toilets"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/2126123931",
+      "name": "Unknown",
+      "type": "Restroom",
+      "latitude": 40.5105145,
+      "longitude": -74.5631609,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "toilets"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/2451197484",
+      "name": "Unknown",
+      "type": "Restroom",
+      "latitude": 40.6121067,
+      "longitude": -74.30679,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "toilets"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/3510489426",
+      "name": "Unknown",
+      "type": "Restroom",
+      "latitude": 40.6020556,
+      "longitude": -74.4058663,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "toilets"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/3510515402",
+      "name": "Unknown",
+      "type": "Restroom",
+      "latitude": 40.605322,
+      "longitude": -74.4117242,
+      "metadata": {
+        "fee": "no",
+        "wheelchair": "yes"
+      },
+      "osm_tags": {
+        "amenity": "toilets",
+        "check_date": "2021-09-26",
+        "fee": "no",
+        "wheelchair": "yes"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/4386539658",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4781033,
+      "longitude": -74.4323258,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/4395572823",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4873918,
+      "longitude": -74.4375959,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/4449522014",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4947214,
+      "longitude": -74.4437574,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/4449522017",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4946817,
+      "longitude": -74.4438754,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/4529268726",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.4438561,
+      "longitude": -74.5061549,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "recycling",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/4543594011",
+      "name": "Unknown",
+      "type": "Restroom",
+      "latitude": 40.5102185,
+      "longitude": -74.5663001,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "toilets"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/4694557057",
+      "name": "Unknown",
+      "type": "Restroom",
+      "latitude": 40.5094,
+      "longitude": -74.4556054,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "toilets"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/4708344548",
+      "name": "Somerset Recycling",
+      "type": "Recycling Location",
+      "latitude": 40.4802319,
+      "longitude": -74.4861613,
+      "metadata": {},
+      "osm_tags": {
+        "addr:city": "Somerset",
+        "addr:housenumber": "921",
+        "addr:postcode": "08873",
+        "addr:state": "NJ",
+        "addr:street": "Somerset Street",
+        "amenity": "recycling",
+        "name": "Somerset Recycling",
+        "phone": "+1-732-545-5050",
+        "recycling_type": "centre",
+        "website": "http://somersetrecycling.net"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/5932662203",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4926622,
+      "longitude": -74.444899,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/5932662244",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4942996,
+      "longitude": -74.4437858,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/5932662246",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4943193,
+      "longitude": -74.4436633,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/5932662248",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4938738,
+      "longitude": -74.4436857,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/6563636530",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.5409472,
+      "longitude": -74.3657874,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/6563636531",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.5408127,
+      "longitude": -74.3660201,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/6563636532",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.5407724,
+      "longitude": -74.3661555,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/6563636533",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.5409358,
+      "longitude": -74.3659068,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/6836005529",
+      "name": "Fanwood Recycling Centre",
+      "type": "Recycling Location",
+      "latitude": 40.6462699,
+      "longitude": -74.3741176,
+      "metadata": {
+        "opening_hours": "Mo-Su 09:00-22:00",
+        "operator": "Township of Fanwood"
+      },
+      "osm_tags": {
+        "amenity": "recycling",
+        "building": "industrial",
+        "name": "Fanwood Recycling Centre",
+        "opening_hours": "Mo-Su 09:00-22:00",
+        "operator": "Township of Fanwood",
+        "operator:type": "government",
+        "recycling_type": "centre"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/7697759786",
+      "name": "Unknown",
+      "type": "Restroom",
+      "latitude": 40.6471949,
+      "longitude": -74.3892904,
+      "metadata": {
+        "access": "yes",
+        "wheelchair": "yes"
+      },
+      "osm_tags": {
+        "access": "yes",
+        "amenity": "toilets",
+        "changing_table": "yes",
+        "toilets:disposal": "flush",
+        "unisex": "yes",
+        "wheelchair": "yes"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/8082627758",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.6103517,
+      "longitude": -74.4638945,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/8112002121",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.651524,
+      "longitude": -74.347097,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/8112002122",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.6516894,
+      "longitude": -74.3471866,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/8112002123",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.6512335,
+      "longitude": -74.3464217,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/8112002125",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.6509967,
+      "longitude": -74.3460386,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/8112002132",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.6504839,
+      "longitude": -74.3464614,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/8112002133",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.650313,
+      "longitude": -74.3476032,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/8112002135",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.6502028,
+      "longitude": -74.3474836,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/8112002136",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.6503351,
+      "longitude": -74.3478079,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/8112002137",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.6503618,
+      "longitude": -74.347988,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/8112002138",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.650575,
+      "longitude": -74.3480296,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/8112002139",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.6507452,
+      "longitude": -74.3478882,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/8112002142",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.6510226,
+      "longitude": -74.3478475,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/8112002143",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.6515345,
+      "longitude": -74.3482239,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/8112002145",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.6516287,
+      "longitude": -74.3485555,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/8260904477",
+      "name": "Red Cross Drop Box",
+      "type": "Recycling Location",
+      "latitude": 40.4588148,
+      "longitude": -74.3602306,
+      "metadata": {
+        "operator": "American Red Cross",
+        "recycling:clothes": "yes",
+        "recycling:shoes": "yes"
+      },
+      "osm_tags": {
+        "amenity": "recycling",
+        "name": "Red Cross Drop Box",
+        "operator": "American Red Cross",
+        "recycling:clothes": "yes",
+        "recycling:shoes": "yes",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/8857253855",
+      "name": "Unknown",
+      "type": "Restroom",
+      "latitude": 40.5918855,
+      "longitude": -74.6243088,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "toilets"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9127686188",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4740858,
+      "longitude": -74.3564715,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket",
+        "material": "metal"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9127686189",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4739603,
+      "longitude": -74.3565807,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket",
+        "material": "metal"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9127686190",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4742105,
+      "longitude": -74.3563612,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket",
+        "material": "metal"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9127686191",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4743356,
+      "longitude": -74.3562507,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket",
+        "material": "metal"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9127686192",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4744435,
+      "longitude": -74.3561561,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket",
+        "material": "metal"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9155672237",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4605372,
+      "longitude": -74.3609195,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9188658165",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.4583976,
+      "longitude": -74.3526089,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "recycling",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9188711325",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.4636636,
+      "longitude": -74.3624555,
+      "metadata": {
+        "recycling:bottles": "yes",
+        "recycling:cans": "yes",
+        "recycling:paper": "yes",
+        "recycling:waste": "yes"
+      },
+      "osm_tags": {
+        "amenity": "recycling",
+        "recycling:bottles": "yes",
+        "recycling:cans": "yes",
+        "recycling:paper": "yes",
+        "recycling:waste": "yes",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9188730223",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.4629938,
+      "longitude": -74.312673,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "recycling",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9188730224",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.4593487,
+      "longitude": -74.3076754,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "recycling",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9189042388",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.4645797,
+      "longitude": -74.3150604,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "recycling",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9198417533",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.476038,
+      "longitude": -74.2968355,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "recycling",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9198439357",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.4755731,
+      "longitude": -74.3188236,
+      "metadata": {
+        "recycling:bottles": "yes",
+        "recycling:cans": "yes",
+        "recycling:paper": "yes",
+        "recycling:trash": "yes"
+      },
+      "osm_tags": {
+        "amenity": "recycling",
+        "recycling:bottles": "yes",
+        "recycling:cans": "yes",
+        "recycling:paper": "yes",
+        "recycling:trash": "yes",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9198723926",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4714063,
+      "longitude": -74.3522651,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9198723931",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4713995,
+      "longitude": -74.3524247,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9199948061",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.4622715,
+      "longitude": -74.3281077,
+      "metadata": {
+        "recycling:animal_waste": "no",
+        "recycling:bottles": "yes",
+        "recycling:cans": "yes",
+        "recycling:paper": "yes",
+        "recycling:waste": "yes"
+      },
+      "osm_tags": {
+        "amenity": "recycling",
+        "recycling:animal_waste": "no",
+        "recycling:bottles": "yes",
+        "recycling:cans": "yes",
+        "recycling:paper": "yes",
+        "recycling:waste": "yes",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9200143662",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.4683319,
+      "longitude": -74.3058027,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "recycling",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9200143693",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.4776376,
+      "longitude": -74.2975872,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "recycling",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9202666768",
+      "name": "Sayreville Clothing Drop",
+      "type": "Recycling Location",
+      "latitude": 40.4717816,
+      "longitude": -74.3523927,
+      "metadata": {
+        "operator": "Sayreville Borough",
+        "recycling:clothes": "yes",
+        "recycling:shoes": "yes"
+      },
+      "osm_tags": {
+        "amenity": "recycling",
+        "material": "steel",
+        "name": "Sayreville Clothing Drop",
+        "operator": "Sayreville Borough",
+        "recycling:clothes": "yes",
+        "recycling:shoes": "yes",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9202758648",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4653619,
+      "longitude": -74.3165232,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9202758649",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4656114,
+      "longitude": -74.3164769,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9202758650",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4658229,
+      "longitude": -74.3164537,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9202758651",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4660783,
+      "longitude": -74.316419,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9202758652",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4658455,
+      "longitude": -74.3168542,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9202758653",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.465568,
+      "longitude": -74.3169319,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9202758654",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4654994,
+      "longitude": -74.3172564,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9202758655",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.465318,
+      "longitude": -74.3177299,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9202758656",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4655004,
+      "longitude": -74.3183787,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9202758659",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.4644072,
+      "longitude": -74.3186683,
+      "metadata": {
+        "recycling:bottles": "yes",
+        "recycling:cans": "yes",
+        "recycling:paper": "yes",
+        "recycling:trash": "yes"
+      },
+      "osm_tags": {
+        "amenity": "recycling",
+        "recycling:bottles": "yes",
+        "recycling:cans": "yes",
+        "recycling:paper": "yes",
+        "recycling:trash": "yes",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9202758660",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4644853,
+      "longitude": -74.3193985,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9202758661",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.464452,
+      "longitude": -74.3196104,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9202758662",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4640201,
+      "longitude": -74.3213092,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9202758669",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4643516,
+      "longitude": -74.3218579,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9202758670",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.4643485,
+      "longitude": -74.3218298,
+      "metadata": {
+        "recycling:bottles": "yes",
+        "recycling:cans": "yes",
+        "recycling:paper": "yes"
+      },
+      "osm_tags": {
+        "amenity": "recycling",
+        "recycling:bottles": "yes",
+        "recycling:cans": "yes",
+        "recycling:paper": "yes",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9202758671",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4644209,
+      "longitude": -74.3221317,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9202758673",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4646904,
+      "longitude": -74.3219006,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9202758674",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4650069,
+      "longitude": -74.3215671,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9203630801",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4626345,
+      "longitude": -74.3279763,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9205321984",
+      "name": "Unknown",
+      "type": "Restroom",
+      "latitude": 40.4643548,
+      "longitude": -74.3189909,
+      "metadata": {
+        "access": "yes"
+      },
+      "osm_tags": {
+        "access": "yes",
+        "amenity": "toilets",
+        "portable": "yes",
+        "toilets:disposal": "chemical",
+        "unisex": "yes"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9205321985",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.4643073,
+      "longitude": -74.3189446,
+      "metadata": {
+        "recycling:bottles": "yes",
+        "recycling:cans": "yes",
+        "recycling:paper": "yes"
+      },
+      "osm_tags": {
+        "amenity": "recycling",
+        "recycling:bottles": "yes",
+        "recycling:cans": "yes",
+        "recycling:paper": "yes",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9205321986",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4643015,
+      "longitude": -74.3189326,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9212197520",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.4762422,
+      "longitude": -74.3176531,
+      "metadata": {
+        "recycling:clothes": "yes",
+        "recycling:shoes": "yes"
+      },
+      "osm_tags": {
+        "amenity": "recycling",
+        "recycling:clothes": "yes",
+        "recycling:shoes": "yes",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9225725636",
+      "name": "Unknown",
+      "type": "Restroom",
+      "latitude": 40.4543193,
+      "longitude": -74.3731319,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "toilets",
+        "portable": "yes",
+        "toilets:disposal": "chemical"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9248488918",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4728611,
+      "longitude": -74.3556985,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9248535917",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4730153,
+      "longitude": -74.3570348,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9248554517",
+      "name": "Unknown",
+      "type": "Restroom",
+      "latitude": 40.474088,
+      "longitude": -74.3561213,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "toilets",
+        "portable": "yes",
+        "toilets:disposal": "chemical",
+        "toilets:handwashing": "no",
+        "unisex": "yes"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9248620217",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4703128,
+      "longitude": -74.359221,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9248620218",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4705017,
+      "longitude": -74.358689,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9248626817",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.4701708,
+      "longitude": -74.3596229,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "recycling",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9248643617",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4663406,
+      "longitude": -74.3627705,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket",
+        "waste": "flags"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9258001183",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.45674,
+      "longitude": -74.3601683,
+      "metadata": {
+        "recycling:bottles": "yes",
+        "recycling:cans": "yes",
+        "recycling:paper": "yes",
+        "recycling:trash": "yes"
+      },
+      "osm_tags": {
+        "amenity": "recycling",
+        "recycling:bottles": "yes",
+        "recycling:cans": "yes",
+        "recycling:paper": "yes",
+        "recycling:trash": "yes",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9310913838",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.463044,
+      "longitude": -74.31965,
+      "metadata": {
+        "opening_hours": "Mo-Th 00:00-09:30, 18:00-24:00; Fr-Sa 00:00-09:30, 17:00-24:00; Su 00:00-13:00, 17:00-24:00",
+        "operator": "Sayreville Public Library",
+        "recycling:books": "yes"
+      },
+      "osm_tags": {
+        "amenity": "recycling",
+        "drive_through": "no",
+        "material": "metal",
+        "opening_hours": "Mo-Th 00:00-09:30, 18:00-24:00; Fr-Sa 00:00-09:30, 17:00-24:00; Su 00:00-13:00, 17:00-24:00",
+        "operator": "Sayreville Public Library",
+        "recycling:books": "yes",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9310913840",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.4630667,
+      "longitude": -74.3197019,
+      "metadata": {
+        "opening_hours": "Mo-Th 00:00-09:30, 18:00-24:00; Fr-Sa 00:00-09:30, 17:00-24:00; Su 00:00-13:00, 17:00-24:00",
+        "operator": "Sayreville Public Library",
+        "recycling:books": "yes"
+      },
+      "osm_tags": {
+        "amenity": "recycling",
+        "drive_through": "no",
+        "material": "metal",
+        "opening_hours": "Mo-Th 00:00-09:30, 18:00-24:00; Fr-Sa 00:00-09:30, 17:00-24:00; Su 00:00-13:00, 17:00-24:00",
+        "operator": "Sayreville Public Library",
+        "recycling:books": "yes",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9310913841",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.4632184,
+      "longitude": -74.3193185,
+      "metadata": {
+        "opening_hours": "24/7",
+        "operator": "Sayreville Public Library",
+        "recycling:books": "yes"
+      },
+      "osm_tags": {
+        "amenity": "recycling",
+        "drive_through": "no",
+        "material": "metal",
+        "opening_hours": "24/7",
+        "operator": "Sayreville Public Library",
+        "recycling:books": "yes",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9410313715",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4602779,
+      "longitude": -74.3038792,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9503779108",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.4730222,
+      "longitude": -74.3250486,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "recycling",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9503779110",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.4729268,
+      "longitude": -74.33035,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "recycling",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9515348777",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.4496985,
+      "longitude": -74.3827682,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "recycling",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9515348778",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4497061,
+      "longitude": -74.3827601,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9548526609",
+      "name": "Unknown",
+      "type": "Restroom",
+      "latitude": 40.4107495,
+      "longitude": -74.4973307,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "toilets",
+        "toilets:type": "mobile"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9548528598",
+      "name": "Unknown",
+      "type": "Restroom",
+      "latitude": 40.4124709,
+      "longitude": -74.4962569,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "toilets",
+        "toilets:type": "mobile"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9684070684",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.5682213,
+      "longitude": -74.3295494,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9684070694",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.5685295,
+      "longitude": -74.329027,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9684070695",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.5685217,
+      "longitude": -74.3290371,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9684070696",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.568515,
+      "longitude": -74.3290457,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9684070697",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.5678829,
+      "longitude": -74.3298869,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9684070698",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.567877,
+      "longitude": -74.3298952,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9684070699",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.5678697,
+      "longitude": -74.3299053,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9686028972",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4173349,
+      "longitude": -74.4199242,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9686028974",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4175284,
+      "longitude": -74.419531,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9686028975",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.4173625,
+      "longitude": -74.4194049,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "recycling",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9686028976",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4173518,
+      "longitude": -74.4193955,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9687936262",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4174976,
+      "longitude": -74.4201725,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9687936263",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4174583,
+      "longitude": -74.4201397,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9688054686",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.4180857,
+      "longitude": -74.4200666,
+      "metadata": {
+        "operator": "East Brunswick Public Library",
+        "recycling:books": "yes"
+      },
+      "osm_tags": {
+        "amenity": "recycling",
+        "colour": "silver",
+        "drive_through": "yes",
+        "operator": "East Brunswick Public Library",
+        "recycling:books": "yes",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9693533400",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.4177049,
+      "longitude": -74.4174414,
+      "metadata": {
+        "recycling:organic_waste": "yes"
+      },
+      "osm_tags": {
+        "amenity": "recycling",
+        "recycling:organic_waste": "yes",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9693547031",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4174047,
+      "longitude": -74.417921,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9693547034",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4182688,
+      "longitude": -74.4186654,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9693547059",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4177339,
+      "longitude": -74.4189371,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9693547060",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.4177288,
+      "longitude": -74.4189103,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "recycling",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9707372723",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.5102933,
+      "longitude": -74.2707257,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9707372724",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.51029,
+      "longitude": -74.270712,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "recycling",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9725626900",
+      "name": "Unknown",
+      "type": "Restroom",
+      "latitude": 40.4232019,
+      "longitude": -74.3825348,
+      "metadata": {
+        "wheelchair": "yes"
+      },
+      "osm_tags": {
+        "amenity": "toilets",
+        "wheelchair": "yes"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/9725637897",
+      "name": "Unknown",
+      "type": "Restroom",
+      "latitude": 40.4240608,
+      "longitude": -74.3836084,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "toilets"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/10057703704",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.4553725,
+      "longitude": -74.498467,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "recycling",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/10831901906",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4662603,
+      "longitude": -74.3182004,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/10831929905",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4661619,
+      "longitude": -74.3173874,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/10831935105",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4661651,
+      "longitude": -74.3179266,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/11139863868",
+      "name": "Unknown",
+      "type": "Restroom",
+      "latitude": 40.5564645,
+      "longitude": -74.2998908,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "toilets",
+        "female": "yes",
+        "level": "1",
+        "male": "yes"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/11163626844",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4856599,
+      "longitude": -74.437425,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/11200401736",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4995655,
+      "longitude": -74.4262928,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/11200428670",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.499478,
+      "longitude": -74.4266504,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/11200434585",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4994657,
+      "longitude": -74.4271892,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/11200440583",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4992641,
+      "longitude": -74.4273271,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/11373876845",
+      "name": "Unknown",
+      "type": "Restroom",
+      "latitude": 40.568064,
+      "longitude": -74.3297492,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "toilets",
+        "check_date": "2023-11-24",
+        "female": "yes",
+        "level": "0",
+        "male": "yes",
+        "toilets:disposal": "flush"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/11390133082",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.5552557,
+      "longitude": -74.3465475,
+      "metadata": {
+        "opening_hours": "24/7",
+        "operator": "The ClothesLine",
+        "recycling:clothes": "yes",
+        "recycling:shoes": "yes"
+      },
+      "osm_tags": {
+        "amenity": "recycling",
+        "opening_hours": "24/7",
+        "operator": "The ClothesLine",
+        "recycling:clothes": "yes",
+        "recycling:shoes": "yes",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/11390133083",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.5552613,
+      "longitude": -74.3465383,
+      "metadata": {
+        "opening_hours": "24/7",
+        "operator": "The ClothesLine",
+        "recycling:clothes": "yes",
+        "recycling:shoes": "yes"
+      },
+      "osm_tags": {
+        "amenity": "recycling",
+        "opening_hours": "24/7",
+        "operator": "The ClothesLine",
+        "recycling:clothes": "yes",
+        "recycling:shoes": "yes",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/11390133084",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.5552665,
+      "longitude": -74.3465288,
+      "metadata": {
+        "opening_hours": "24/7",
+        "operator": "The ClothesLine",
+        "recycling:clothes": "yes",
+        "recycling:shoes": "yes"
+      },
+      "osm_tags": {
+        "amenity": "recycling",
+        "opening_hours": "24/7",
+        "operator": "The ClothesLine",
+        "recycling:clothes": "yes",
+        "recycling:shoes": "yes",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/11390133085",
+      "name": "Planet Aid",
+      "type": "Recycling Location",
+      "latitude": 40.5552902,
+      "longitude": -74.3465508,
+      "metadata": {
+        "opening_hours": "24/7",
+        "recycling:clothes": "yes",
+        "recycling:shoes": "yes"
+      },
+      "osm_tags": {
+        "amenity": "recycling",
+        "brand": "Planet Aid",
+        "brand:wikidata": "Q7201055",
+        "colour": "yellow",
+        "name": "Planet Aid",
+        "opening_hours": "24/7",
+        "recycling:clothes": "yes",
+        "recycling:shoes": "yes",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/11390133086",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.5541444,
+      "longitude": -74.346505,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "recycling",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/11390133088",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.5530268,
+      "longitude": -74.3464322,
+      "metadata": {
+        "recycling:clothes": "yes",
+        "recycling:shoes": "yes",
+        "recycling:toys": "yes"
+      },
+      "osm_tags": {
+        "amenity": "recycling",
+        "recycling:clothes": "yes",
+        "recycling:shoes": "yes",
+        "recycling:toys": "yes",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/11390133089",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.5530322,
+      "longitude": -74.3464282,
+      "metadata": {
+        "operator": "The ClothesLine",
+        "recycling:clothes": "yes",
+        "recycling:shoes": "yes"
+      },
+      "osm_tags": {
+        "amenity": "recycling",
+        "operator": "The ClothesLine",
+        "recycling:clothes": "yes",
+        "recycling:shoes": "yes",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/11390133092",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.5531359,
+      "longitude": -74.3463235,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "recycling",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/12288754567",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4784157,
+      "longitude": -74.5929662,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/12321012335",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.5450713,
+      "longitude": -74.3615147,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/12461468291",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.5556,
+      "longitude": -74.3453235,
+      "metadata": {
+        "operator": "Better World Recycling",
+        "recycling:clothes": "yes",
+        "recycling:shoes": "yes"
+      },
+      "osm_tags": {
+        "amenity": "recycling",
+        "colour": "red",
+        "operator": "Better World Recycling",
+        "phone": "+1-888-551-3211",
+        "recycling:clothes": "yes",
+        "recycling:shoes": "yes",
+        "recycling_type": "container",
+        "website": "https://www.betterworldrecycling.org"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/12461468292",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.5556019,
+      "longitude": -74.3453196,
+      "metadata": {
+        "operator": "Better World Recycling",
+        "recycling:clothes": "yes",
+        "recycling:shoes": "yes"
+      },
+      "osm_tags": {
+        "amenity": "recycling",
+        "colour": "red",
+        "operator": "Better World Recycling",
+        "phone": "+1-888-551-3211",
+        "recycling:clothes": "yes",
+        "recycling:shoes": "yes",
+        "recycling_type": "container",
+        "website": "https://www.betterworldrecycling.org"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/12463980833",
+      "name": "Unknown",
+      "type": "Restroom",
+      "latitude": 40.5450546,
+      "longitude": -74.3613838,
+      "metadata": {
+        "access": "yes"
+      },
+      "osm_tags": {
+        "access": "yes",
+        "amenity": "toilets",
+        "toilets:disposal": "flush"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/12686031145",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.485552,
+      "longitude": -74.4230195,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/12877234890",
+      "name": "Goodwill donation Xpress",
+      "type": "Recycling Location",
+      "latitude": 40.5687898,
+      "longitude": -74.5481578,
+      "metadata": {
+        "operator": "Goodwill Industries of Southern New Jersey & Philadelphia",
+        "recycling:clothes": "yes"
+      },
+      "osm_tags": {
+        "amenity": "recycling",
+        "brand": "Goodwill",
+        "brand:wikidata": "Q5583655",
+        "name": "Goodwill donation Xpress",
+        "operator": "Goodwill Industries of Southern New Jersey & Philadelphia",
+        "operator:wikidata": "Q54624021",
+        "recycling:clothes": "yes",
+        "recycling_type": "centre"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/12942540652",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.4429979,
+      "longitude": -74.490962,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "recycling",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/12942551741",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.4443802,
+      "longitude": -74.48883,
+      "metadata": {
+        "recycling:beverage_cartons": "no",
+        "recycling:cans": "yes",
+        "recycling:glass_bottles": "yes",
+        "recycling:plastic": "no",
+        "recycling:plastic_bottles": "yes",
+        "recycling:plastic_packaging": "no"
+      },
+      "osm_tags": {
+        "amenity": "recycling",
+        "recycling:beverage_cartons": "no",
+        "recycling:cans": "yes",
+        "recycling:glass_bottles": "yes",
+        "recycling:plastic": "no",
+        "recycling:plastic_bottles": "yes",
+        "recycling:plastic_packaging": "no",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/12942567626",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.444736,
+      "longitude": -74.4893581,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/12942570585",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4415046,
+      "longitude": -74.4903785,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/12942570878",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4409157,
+      "longitude": -74.4840939,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/12942571468",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4415319,
+      "longitude": -74.4853796,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/12942571858",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.443262,
+      "longitude": -74.4876553,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/12942572036",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.443425,
+      "longitude": -74.4926855,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "recycling",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/12942573223",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4402853,
+      "longitude": -74.4827228,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/12942574856",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.443262,
+      "longitude": -74.4876565,
+      "metadata": {
+        "recycling:cans": "yes",
+        "recycling:glass_bottles": "yes",
+        "recycling:plastic": "yes"
+      },
+      "osm_tags": {
+        "amenity": "recycling",
+        "recycling:cans": "yes",
+        "recycling:glass_bottles": "yes",
+        "recycling:plastic": "yes",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/12942576777",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4425017,
+      "longitude": -74.4865581,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/12942576778",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.4439898,
+      "longitude": -74.4881976,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "recycling",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/12942581356",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4439862,
+      "longitude": -74.488188,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/12942582136",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4434106,
+      "longitude": -74.4927004,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/12942583410",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4423533,
+      "longitude": -74.4932746,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/12942587446",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.4447445,
+      "longitude": -74.4893712,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "recycling",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/12942598251",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.4421127,
+      "longitude": -74.4908509,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "recycling",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/12942598639",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.4423985,
+      "longitude": -74.4915872,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "recycling",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/12942601071",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.4423428,
+      "longitude": -74.4932685,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "recycling",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/12942606602",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4423925,
+      "longitude": -74.4915881,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/12942608961",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4429863,
+      "longitude": -74.4909398,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/12942609908",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.4402898,
+      "longitude": -74.4883171,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "recycling",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/12942610230",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4399591,
+      "longitude": -74.4889793,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/12942614560",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.440297,
+      "longitude": -74.4883215,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/12942631149",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.4414797,
+      "longitude": -74.4903473,
+      "metadata": {
+        "recycling:cans": "yes",
+        "recycling:glass_bottles": "yes",
+        "recycling:plastic": "yes"
+      },
+      "osm_tags": {
+        "amenity": "recycling",
+        "recycling:cans": "yes",
+        "recycling:glass_bottles": "yes",
+        "recycling:plastic": "yes",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/12942631617",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4421687,
+      "longitude": -74.4908538,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/12942633233",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.439345,
+      "longitude": -74.485744,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/12942636507",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.4399568,
+      "longitude": -74.4890048,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "recycling",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/12942636751",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4405597,
+      "longitude": -74.4875541,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/12942643031",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.4393487,
+      "longitude": -74.4857405,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "recycling",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/12942643665",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.4389531,
+      "longitude": -74.4863918,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "recycling",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/12942644083",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4385492,
+      "longitude": -74.484562,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/12942646383",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.4382647,
+      "longitude": -74.4850624,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "recycling",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/12942694458",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4382688,
+      "longitude": -74.4850415,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/12942740004",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.4385613,
+      "longitude": -74.4845454,
+      "metadata": {
+        "recycling:beverage_cartons": "yes",
+        "recycling:cans": "yes",
+        "recycling:glass_bottles": "yes",
+        "recycling:plastic": "no",
+        "recycling:plastic_bottles": "yes",
+        "recycling:plastic_packaging": "no"
+      },
+      "osm_tags": {
+        "amenity": "recycling",
+        "recycling:beverage_cartons": "yes",
+        "recycling:cans": "yes",
+        "recycling:glass_bottles": "yes",
+        "recycling:plastic": "no",
+        "recycling:plastic_bottles": "yes",
+        "recycling:plastic_packaging": "no",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/12942836358",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4393546,
+      "longitude": -74.4817057,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket",
+        "waste": "mixed"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/12943675902",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4400035,
+      "longitude": -74.4807325,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket",
+        "colour": "black",
+        "material": "metal",
+        "waste": "household"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/12943675903",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.4400247,
+      "longitude": -74.4807463,
+      "metadata": {
+        "recycling:cans": "yes",
+        "recycling:cardboard": "yes",
+        "recycling:glass_bottles": "yes",
+        "recycling:magazines": "yes",
+        "recycling:newspaper": "yes",
+        "recycling:paper": "yes",
+        "recycling:plastic_bottles": "yes"
+      },
+      "osm_tags": {
+        "amenity": "recycling",
+        "recycling:cans": "yes",
+        "recycling:cardboard": "yes",
+        "recycling:glass_bottles": "yes",
+        "recycling:magazines": "yes",
+        "recycling:newspaper": "yes",
+        "recycling:paper": "yes",
+        "recycling:plastic_bottles": "yes",
+        "recycling_type": "bin"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/13009393577",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4990531,
+      "longitude": -74.4278607,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/13009393578",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.4990549,
+      "longitude": -74.4278542,
+      "metadata": {
+        "recycling:glass_bottles": "yes",
+        "recycling:plastic": "yes"
+      },
+      "osm_tags": {
+        "amenity": "recycling",
+        "recycling:glass_bottles": "yes",
+        "recycling:plastic": "yes",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/13009393579",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.4989618,
+      "longitude": -74.4280101,
+      "metadata": {
+        "recycling:glass_bottles": "yes",
+        "recycling:plastic": "yes"
+      },
+      "osm_tags": {
+        "amenity": "recycling",
+        "recycling:glass_bottles": "yes",
+        "recycling:plastic": "yes",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/13009393580",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.49896,
+      "longitude": -74.4280166,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/13009393581",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.4990899,
+      "longitude": -74.4282754,
+      "metadata": {
+        "recycling:glass_bottles": "yes",
+        "recycling:plastic": "yes"
+      },
+      "osm_tags": {
+        "amenity": "recycling",
+        "recycling:glass_bottles": "yes",
+        "recycling:plastic": "yes",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/13009393582",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4990881,
+      "longitude": -74.4282819,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/13009393583",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.4989117,
+      "longitude": -74.4284084,
+      "metadata": {
+        "recycling:glass_bottles": "yes",
+        "recycling:plastic": "yes"
+      },
+      "osm_tags": {
+        "amenity": "recycling",
+        "recycling:glass_bottles": "yes",
+        "recycling:plastic": "yes",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/13009393584",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4989099,
+      "longitude": -74.4284149,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/13009393585",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.4988639,
+      "longitude": -74.4289764,
+      "metadata": {
+        "recycling:glass_bottles": "yes",
+        "recycling:plastic": "yes"
+      },
+      "osm_tags": {
+        "amenity": "recycling",
+        "recycling:glass_bottles": "yes",
+        "recycling:plastic": "yes",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/13009393586",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4988621,
+      "longitude": -74.4289829,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/13009393587",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.4987074,
+      "longitude": -74.4290346,
+      "metadata": {
+        "recycling:glass_bottles": "yes",
+        "recycling:plastic": "yes"
+      },
+      "osm_tags": {
+        "amenity": "recycling",
+        "recycling:glass_bottles": "yes",
+        "recycling:plastic": "yes",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/13009393588",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4987056,
+      "longitude": -74.4290411,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/13009393589",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.4985254,
+      "longitude": -74.4296072,
+      "metadata": {
+        "recycling:glass_bottles": "yes",
+        "recycling:plastic": "yes"
+      },
+      "osm_tags": {
+        "amenity": "recycling",
+        "recycling:glass_bottles": "yes",
+        "recycling:plastic": "yes",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/13009393590",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4985236,
+      "longitude": -74.4296137,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/13009393591",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.4986851,
+      "longitude": -74.4295206,
+      "metadata": {
+        "recycling:glass_bottles": "yes",
+        "recycling:plastic": "yes"
+      },
+      "osm_tags": {
+        "amenity": "recycling",
+        "recycling:glass_bottles": "yes",
+        "recycling:plastic": "yes",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/13009393592",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4986833,
+      "longitude": -74.4295271,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/13009393593",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.4985664,
+      "longitude": -74.4299237,
+      "metadata": {
+        "recycling:glass_bottles": "yes",
+        "recycling:plastic": "yes"
+      },
+      "osm_tags": {
+        "amenity": "recycling",
+        "recycling:glass_bottles": "yes",
+        "recycling:plastic": "yes",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/13009393594",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4985646,
+      "longitude": -74.4299302,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/13009393595",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.4985953,
+      "longitude": -74.4302004,
+      "metadata": {
+        "recycling:glass_bottles": "yes",
+        "recycling:plastic": "yes"
+      },
+      "osm_tags": {
+        "amenity": "recycling",
+        "recycling:glass_bottles": "yes",
+        "recycling:plastic": "yes",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/13009393596",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4985935,
+      "longitude": -74.4302069,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/13009393599",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.4992902,
+      "longitude": -74.4279282,
+      "metadata": {
+        "recycling:glass_bottles": "yes",
+        "recycling:plastic": "yes"
+      },
+      "osm_tags": {
+        "amenity": "recycling",
+        "recycling:glass_bottles": "yes",
+        "recycling:plastic": "yes",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/13009393600",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.4992884,
+      "longitude": -74.4279347,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/13009414801",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.4992048,
+      "longitude": -74.4280578,
+      "metadata": {
+        "recycling:glass_bottles": "yes",
+        "recycling:plastic": "yes"
+      },
+      "osm_tags": {
+        "amenity": "recycling",
+        "recycling:glass_bottles": "yes",
+        "recycling:plastic": "yes",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/13009414802",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.499203,
+      "longitude": -74.4280643,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/13143201907",
+      "name": "Unknown",
+      "type": "Restroom",
+      "latitude": 40.4424746,
+      "longitude": -74.4925061,
+      "metadata": {
+        "access": "yes"
+      },
+      "osm_tags": {
+        "access": "yes",
+        "amenity": "toilets",
+        "female": "yes"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/13143201908",
+      "name": "Unknown",
+      "type": "Restroom",
+      "latitude": 40.4425578,
+      "longitude": -74.4924492,
+      "metadata": {
+        "access": "yes"
+      },
+      "osm_tags": {
+        "access": "yes",
+        "amenity": "toilets",
+        "male": "yes"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/13143201919",
+      "name": "Unknown",
+      "type": "Restroom",
+      "latitude": 40.4432535,
+      "longitude": -74.4897794,
+      "metadata": {
+        "access": "yes"
+      },
+      "osm_tags": {
+        "access": "yes",
+        "amenity": "toilets",
+        "female": "yes"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/13143201920",
+      "name": "Unknown",
+      "type": "Restroom",
+      "latitude": 40.4433351,
+      "longitude": -74.4897024,
+      "metadata": {
+        "access": "yes"
+      },
+      "osm_tags": {
+        "access": "yes",
+        "amenity": "toilets",
+        "male": "yes"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/13153130663",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.6248651,
+      "longitude": -74.3649706,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/13232577702",
+      "name": "Unknown",
+      "type": "Restroom",
+      "latitude": 40.4914242,
+      "longitude": -74.6007656,
+      "metadata": {
+        "access": "yes",
+        "wheelchair": "no"
+      },
+      "osm_tags": {
+        "access": "yes",
+        "amenity": "toilets",
+        "changing_table": "no",
+        "portable": "yes",
+        "toilets:handwashing": "no",
+        "unisex": "yes",
+        "wheelchair": "no"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/13451676562",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.5388787,
+      "longitude": -74.3652339,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "recycling",
+        "recycling_type": "container",
+        "waste": "recycling"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/13588370641",
+      "name": "GreenDrop",
+      "type": "Recycling Location",
+      "latitude": 40.5378506,
+      "longitude": -74.36381,
+      "metadata": {
+        "opening_hours": "Mo-Su 10:00-17:00",
+        "recycling:clothes": "yes",
+        "recycling:furniture": "yes",
+        "recycling:toys": "yes"
+      },
+      "osm_tags": {
+        "addr:city": "Metuchen",
+        "addr:housenumber": "359",
+        "addr:postcode": "08840",
+        "addr:state": "NJ",
+        "addr:street": "Amboy Avenue",
+        "amenity": "recycling",
+        "description": "GreenDrop is a for-profit company that collects and sells donated goods to fund its partner charities.",
+        "name": "GreenDrop",
+        "opening_hours": "Mo-Su 10:00-17:00",
+        "phone": "+1-888-944-3767",
+        "recycling:clothes": "yes",
+        "recycling:furniture": "yes",
+        "recycling:toys": "yes",
+        "recycling_type": "centre",
+        "website": "https://locations.gogreendrop.com/nj/metuchen/greendrop-donation-center-4631.html"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/13970627235",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.5532728,
+      "longitude": -74.3485951,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket",
+        "waste": "flags"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/14018060638",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.5380068,
+      "longitude": -74.3603819,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/14018060639",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.5379865,
+      "longitude": -74.3603806,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "recycling",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/14058825349",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.5383228,
+      "longitude": -74.366472,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/14058825362",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.5400666,
+      "longitude": -74.3675832,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/14058825363",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.5401058,
+      "longitude": -74.3675234,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/14068694897",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.5396011,
+      "longitude": -74.3651836,
+      "metadata": {
+        "recycling:clothes": "yes"
+      },
+      "osm_tags": {
+        "amenity": "recycling",
+        "colour": "red",
+        "fixme": "add operator and any other available details",
+        "recycling:clothes": "yes",
+        "recycling_type": "container"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/14253029727",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.5549493,
+      "longitude": -74.5309769,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "node/14253029728",
+      "name": "Unknown",
+      "type": "Trash Bin",
+      "latitude": 40.5548677,
+      "longitude": -74.5308259,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "waste_basket"
+      },
+      "coordinate_source": "node",
+      "access_verified": false
+    },
+    {
+      "id": "way/175493542",
+      "name": "East Brunswick Recycling Facility",
+      "type": "Recycling Location",
+      "latitude": 40.41253115,
+      "longitude": -74.4463516,
+      "metadata": {
+        "recycling:cans": "yes",
+        "recycling:cardboard": "yes",
+        "recycling:cartons": "yes",
+        "recycling:clothes": "no",
+        "recycling:glass": "yes",
+        "recycling:glass_bottles": "yes",
+        "recycling:magazines": "yes",
+        "recycling:newspaper": "yes",
+        "recycling:paper": "yes",
+        "recycling:paper_packaging": "yes",
+        "recycling:plastic": "yes",
+        "recycling:plastic_bottles": "yes",
+        "recycling:plastic_packaging": "yes"
+      },
+      "osm_tags": {
+        "amenity": "recycling",
+        "name": "East Brunswick Recycling Facility",
+        "recycling:cans": "yes",
+        "recycling:cardboard": "yes",
+        "recycling:cartons": "yes",
+        "recycling:clothes": "no",
+        "recycling:glass": "yes",
+        "recycling:glass_bottles": "yes",
+        "recycling:magazines": "yes",
+        "recycling:newspaper": "yes",
+        "recycling:paper": "yes",
+        "recycling:paper_packaging": "yes",
+        "recycling:plastic": "yes",
+        "recycling:plastic_bottles": "yes",
+        "recycling:plastic_packaging": "yes",
+        "recycling_type": "centre"
+      },
+      "coordinate_source": "area_center",
+      "access_verified": false
+    },
+    {
+      "id": "way/253417298",
+      "name": "Unknown",
+      "type": "Restroom",
+      "latitude": 40.62439675,
+      "longitude": -74.57525294999999,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "toilets",
+        "building": "yes"
+      },
+      "coordinate_source": "area_center",
+      "access_verified": false
+    },
+    {
+      "id": "way/254255315",
+      "name": "Unknown",
+      "type": "Restroom",
+      "latitude": 40.57793225,
+      "longitude": -74.39372565,
+      "metadata": {
+        "access": "yes",
+        "fee": "no"
+      },
+      "osm_tags": {
+        "access": "yes",
+        "amenity": "toilets",
+        "building": "yes",
+        "fee": "no"
+      },
+      "coordinate_source": "area_center",
+      "access_verified": false
+    },
+    {
+      "id": "way/261306814",
+      "name": "Unknown",
+      "type": "Restroom",
+      "latitude": 40.55108585,
+      "longitude": -74.34067815,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "toilets",
+        "building": "yes"
+      },
+      "coordinate_source": "area_center",
+      "access_verified": false
+    },
+    {
+      "id": "way/262108588",
+      "name": "Unknown",
+      "type": "Restroom",
+      "latitude": 40.60540145,
+      "longitude": -74.34619355000001,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "toilets",
+        "building": "yes"
+      },
+      "coordinate_source": "area_center",
+      "access_verified": false
+    },
+    {
+      "id": "way/285840133",
+      "name": "Unknown",
+      "type": "Restroom",
+      "latitude": 40.501047549999996,
+      "longitude": -74.36221954999999,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "toilets",
+        "building": "yes"
+      },
+      "coordinate_source": "area_center",
+      "access_verified": false
+    },
+    {
+      "id": "way/285840135",
+      "name": "Unknown",
+      "type": "Restroom",
+      "latitude": 40.50316305,
+      "longitude": -74.36016240000001,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "toilets",
+        "building": "yes"
+      },
+      "coordinate_source": "area_center",
+      "access_verified": false
+    },
+    {
+      "id": "way/291399224",
+      "name": "Unknown",
+      "type": "Restroom",
+      "latitude": 40.58505325,
+      "longitude": -74.41273635,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "toilets",
+        "building": "yes"
+      },
+      "coordinate_source": "area_center",
+      "access_verified": false
+    },
+    {
+      "id": "way/338053928",
+      "name": "Unknown",
+      "type": "Restroom",
+      "latitude": 40.58966745,
+      "longitude": -74.40864025,
+      "metadata": {
+        "access": "yes",
+        "fee": "no"
+      },
+      "osm_tags": {
+        "access": "yes",
+        "amenity": "toilets",
+        "building": "yes",
+        "fee": "no",
+        "toilets:disposal": "flush"
+      },
+      "coordinate_source": "area_center",
+      "access_verified": false
+    },
+    {
+      "id": "way/475723426",
+      "name": "Unknown",
+      "type": "Restroom",
+      "latitude": 40.48960245,
+      "longitude": -74.4244823,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "toilets",
+        "building": "yes"
+      },
+      "coordinate_source": "area_center",
+      "access_verified": false
+    },
+    {
+      "id": "way/475723444",
+      "name": "Unknown",
+      "type": "Restroom",
+      "latitude": 40.49185305,
+      "longitude": -74.42054250000001,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "toilets",
+        "building": "yes"
+      },
+      "coordinate_source": "area_center",
+      "access_verified": false
+    },
+    {
+      "id": "way/475732039",
+      "name": "Unknown",
+      "type": "Restroom",
+      "latitude": 40.50885595,
+      "longitude": -74.4464694,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "toilets",
+        "building": "yes"
+      },
+      "coordinate_source": "area_center",
+      "access_verified": false
+    },
+    {
+      "id": "way/475732067",
+      "name": "Unknown",
+      "type": "Restroom",
+      "latitude": 40.510171549999995,
+      "longitude": -74.46540235,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "toilets",
+        "building": "civic"
+      },
+      "coordinate_source": "area_center",
+      "access_verified": false
+    },
+    {
+      "id": "way/481394325",
+      "name": "Unknown",
+      "type": "Restroom",
+      "latitude": 40.54036725,
+      "longitude": -74.287392,
+      "metadata": {
+        "fee": "no"
+      },
+      "osm_tags": {
+        "amenity": "toilets",
+        "building": "yes",
+        "fee": "no",
+        "female": "yes"
+      },
+      "coordinate_source": "area_center",
+      "access_verified": false
+    },
+    {
+      "id": "way/481820268",
+      "name": "Unknown",
+      "type": "Restroom",
+      "latitude": 40.52171315,
+      "longitude": -74.2860633,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "toilets",
+        "building": "yes"
+      },
+      "coordinate_source": "area_center",
+      "access_verified": false
+    },
+    {
+      "id": "way/547089109",
+      "name": "Unknown",
+      "type": "Restroom",
+      "latitude": 40.6243011,
+      "longitude": -74.36548505,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "toilets",
+        "building": "yes"
+      },
+      "coordinate_source": "area_center",
+      "access_verified": false
+    },
+    {
+      "id": "way/551682163",
+      "name": "Unknown",
+      "type": "Restroom",
+      "latitude": 40.5365522,
+      "longitude": -74.61996535,
+      "metadata": {
+        "access": "yes"
+      },
+      "osm_tags": {
+        "access": "yes",
+        "amenity": "toilets",
+        "building": "bathroom"
+      },
+      "coordinate_source": "area_center",
+      "access_verified": false
+    },
+    {
+      "id": "way/615924621",
+      "name": "Unknown",
+      "type": "Restroom",
+      "latitude": 40.48598295,
+      "longitude": -74.62465655,
+      "metadata": {},
+      "osm_tags": {
+        "addr:city": "Hillsborough",
+        "addr:housenumber": "530",
+        "addr:postcode": "08844",
+        "addr:state": "NJ",
+        "addr:street": "Willow Road",
+        "amenity": "toilets",
+        "building": "yes"
+      },
+      "coordinate_source": "area_center",
+      "access_verified": false
+    },
+    {
+      "id": "way/617521355",
+      "name": "Unknown",
+      "type": "Restroom",
+      "latitude": 40.5399572,
+      "longitude": -74.2819717,
+      "metadata": {
+        "access": "yes"
+      },
+      "osm_tags": {
+        "access": "yes",
+        "amenity": "toilets",
+        "building": "yes",
+        "female": "yes",
+        "male": "yes",
+        "toilets:disposal": "flush"
+      },
+      "coordinate_source": "area_center",
+      "access_verified": false
+    },
+    {
+      "id": "way/626052677",
+      "name": "Unknown",
+      "type": "Restroom",
+      "latitude": 40.554759250000004,
+      "longitude": -74.48774080000001,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "toilets",
+        "building": "yes"
+      },
+      "coordinate_source": "area_center",
+      "access_verified": false
+    },
+    {
+      "id": "way/682684566",
+      "name": "Unknown",
+      "type": "Recycling Location",
+      "latitude": 40.55661205,
+      "longitude": -74.57263040000001,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "recycling",
+        "recycling_type": "centre"
+      },
+      "coordinate_source": "area_center",
+      "access_verified": false
+    },
+    {
+      "id": "way/760812559",
+      "name": "Unknown",
+      "type": "Restroom",
+      "latitude": 40.543071350000005,
+      "longitude": -74.62622185000001,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "toilets",
+        "building": "yes"
+      },
+      "coordinate_source": "area_center",
+      "access_verified": false
+    },
+    {
+      "id": "way/760817379",
+      "name": "Unknown",
+      "type": "Restroom",
+      "latitude": 40.551102,
+      "longitude": -74.6278074,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "toilets",
+        "building": "yes"
+      },
+      "coordinate_source": "area_center",
+      "access_verified": false
+    },
+    {
+      "id": "way/886381873",
+      "name": "Unknown",
+      "type": "Restroom",
+      "latitude": 40.473579799999996,
+      "longitude": -74.35644445,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "toilets",
+        "building": "yes",
+        "changing_table": "yes",
+        "toilets:disposal": "flush"
+      },
+      "coordinate_source": "area_center",
+      "access_verified": false
+    },
+    {
+      "id": "way/892158713",
+      "name": "Unknown",
+      "type": "Restroom",
+      "latitude": 40.5799172,
+      "longitude": -74.41601025,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "toilets",
+        "building": "yes"
+      },
+      "coordinate_source": "area_center",
+      "access_verified": false
+    },
+    {
+      "id": "way/894030467",
+      "name": "Unknown",
+      "type": "Restroom",
+      "latitude": 40.597708499999996,
+      "longitude": -74.4675216,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "toilets",
+        "building": "yes"
+      },
+      "coordinate_source": "area_center",
+      "access_verified": false
+    },
+    {
+      "id": "way/894030468",
+      "name": "Unknown",
+      "type": "Restroom",
+      "latitude": 40.597681550000004,
+      "longitude": -74.46761240000001,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "toilets",
+        "building": "yes"
+      },
+      "coordinate_source": "area_center",
+      "access_verified": false
+    },
+    {
+      "id": "way/925770245",
+      "name": "Unknown",
+      "type": "Restroom",
+      "latitude": 40.5489003,
+      "longitude": -74.34158445,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "toilets",
+        "building": "yes"
+      },
+      "coordinate_source": "area_center",
+      "access_verified": false
+    },
+    {
+      "id": "way/925770251",
+      "name": "Unknown",
+      "type": "Restroom",
+      "latitude": 40.543126400000006,
+      "longitude": -74.34115835,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "toilets",
+        "building": "yes"
+      },
+      "coordinate_source": "area_center",
+      "access_verified": false
+    },
+    {
+      "id": "way/958243031",
+      "name": "Somerset County Public Works",
+      "type": "Recycling Location",
+      "latitude": 40.5810246,
+      "longitude": -74.55853625,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "recycling",
+        "name": "Somerset County Public Works",
+        "recycling_type": "centre"
+      },
+      "coordinate_source": "area_center",
+      "access_verified": false
+    },
+    {
+      "id": "way/997287647",
+      "name": "Unknown",
+      "type": "Restroom",
+      "latitude": 40.4387411,
+      "longitude": -74.3616411,
+      "metadata": {
+        "wheelchair": "yes"
+      },
+      "osm_tags": {
+        "amenity": "toilets",
+        "building": "yes",
+        "toilets:disposal": "flush",
+        "wheelchair": "yes"
+      },
+      "coordinate_source": "area_center",
+      "access_verified": false
+    },
+    {
+      "id": "way/1002384027",
+      "name": "Sayreville Recycling Center (Fort Grumpy)",
+      "type": "Recycling Location",
+      "latitude": 40.43406645,
+      "longitude": -74.3360351,
+      "metadata": {
+        "opening_hours": "Mo,Fr 07:30-13:00; Tu-Th closed; Sa[1,3] 07:00-12:00; Sa[2] closed; Su closed"
+      },
+      "osm_tags": {
+        "addr:city": "Sayreville",
+        "addr:housenumber": "3750",
+        "addr:postcode": "08872",
+        "addr:state": "NJ",
+        "addr:street": "Bordentown Avenue",
+        "amenity": "recycling",
+        "area": "yes",
+        "name": "Sayreville Recycling Center (Fort Grumpy)",
+        "opening_hours": "Mo,Fr 07:30-13:00; Tu-Th closed; Sa[1,3] 07:00-12:00; Sa[2] closed; Su closed",
+        "phone": "+1 732-390-7043",
+        "recycling_type": "centre",
+        "website": "http://www.sayreville.com/Cit-e-Access/webpage.cfm?TID=87&TPID=16042"
+      },
+      "coordinate_source": "area_center",
+      "access_verified": false
+    },
+    {
+      "id": "way/1279257037",
+      "name": "Unknown",
+      "type": "Restroom",
+      "latitude": 40.505942399999995,
+      "longitude": -74.45783374999999,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "toilets",
+        "building": "yes",
+        "toilets:disposal": "flush"
+      },
+      "coordinate_source": "area_center",
+      "access_verified": false
+    },
+    {
+      "id": "way/1292855820",
+      "name": "Unknown",
+      "type": "Restroom",
+      "latitude": 40.625316049999995,
+      "longitude": -74.57212175000001,
+      "metadata": {
+        "access": "yes"
+      },
+      "osm_tags": {
+        "access": "yes",
+        "amenity": "toilets",
+        "building": "yes"
+      },
+      "coordinate_source": "area_center",
+      "access_verified": false
+    },
+    {
+      "id": "way/1550035847",
+      "name": "Unknown",
+      "type": "Restroom",
+      "latitude": 40.4429977,
+      "longitude": -74.43462919999999,
+      "metadata": {},
+      "osm_tags": {
+        "amenity": "toilets",
+        "building": "yes"
+      },
+      "coordinate_source": "area_center",
+      "access_verified": false
+    },
+    {
+      "id": "way/1565263501",
+      "name": "Unknown",
+      "type": "Restroom",
+      "latitude": 40.554672100000005,
+      "longitude": -74.53105825,
+      "metadata": {
+        "access": "yes"
+      },
+      "osm_tags": {
+        "access": "yes",
+        "amenity": "toilets",
+        "building": "yes",
+        "building:levels": "1",
+        "female": "yes",
+        "male": "yes",
+        "toilets:disposal": "flush"
+      },
+      "coordinate_source": "area_center",
+      "access_verified": false
+    }
+  ],
+  "coverage": {
+    "type": "circle",
+    "center": {
+      "latitude": 40.53399,
+      "longitude": -74.45793
+    },
+    "radius_meters": 16093.44,
+    "approximate_center": true
+  },
+  "center": {
+    "latitude": 40.53399,
+    "longitude": -74.45793
+  },
+  "radius_meters": 16093.44,
+  "record_count": 273,
+  "counts": {
+    "Trash Bin": 128,
+    "Restroom": 60,
+    "Recycling Location": 85
+  },
+  "freshness": {
+    "data_timestamp": "2026-10-09T20:21:04Z",
+    "retrieved_at": "2026-10-11T05:29:10.261149+00:00"
+  }
+}

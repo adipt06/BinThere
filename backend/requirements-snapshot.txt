@@ -1,0 +1,2 @@
+# Optional only for importing genuine .osm.pbf extracts. Not needed by FastAPI.
+osmium>=4,<5
