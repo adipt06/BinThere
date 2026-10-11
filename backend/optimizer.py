@@ -7,6 +7,7 @@ from routing import get_route
 
 
 def distance_to_route(resource, coordinates):
+
     latitude = resource["latitude"]
     longitude = resource["longitude"]
 
@@ -26,6 +27,7 @@ def distance_to_route(resource, coordinates):
     closest = float("inf")
 
     for i in range(len(points) - 1):
+
         ax, ay = points[i]
         bx, by = points[i + 1]
 
@@ -68,7 +70,10 @@ def find_best_route(
 
     coordinates = direct_route["geometry"]["coordinates"]
 
-    resources = get_resources_along_route(coordinates)
+    resources = get_resources_along_route(
+        coordinates,
+        facility_type=facility_type
+    )
 
     candidates = []
 
@@ -90,6 +95,7 @@ def find_best_route(
     evaluated = 0
 
     for facility in candidates:
+
         try:
             alternative = get_route(
                 start_lat,
@@ -100,7 +106,6 @@ def find_best_route(
             )
 
         except requests.exceptions.HTTPError as error:
-            # Skip a facility if Mapbox cannot route to it.
             if (
                 error.response is not None
                 and error.response.status_code == 422

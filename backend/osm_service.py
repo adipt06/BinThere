@@ -1,22 +1,33 @@
+
 import requests
 
 OVERPASS_API_URL = "https://overpass-api.de/api/interpreter"
 
+AMENITY_TAGS = {
+    "Trash Bin": "waste_basket",
+    "Restroom": "toilets",
+    "Recycling Location": "recycling"
+}
 
-def fetch_resources(points, radius):
+
+def fetch_resources(points, radius, facility_type=None):
 
     query_parts = []
 
+    if facility_type is not None:
+        amenities = [AMENITY_TAGS[facility_type]]
+    else:
+        amenities = ["waste_basket", "toilets", "recycling"]
+
     for latitude, longitude in points:
-        query_parts.append(
-            f'node["amenity"="waste_basket"](around:{radius},{latitude},{longitude});'
-        )
-        query_parts.append(
-            f'nwr["amenity"="toilets"](around:{radius},{latitude},{longitude});'
-        )
-        query_parts.append(
-            f'nwr["amenity"="recycling"](around:{radius},{latitude},{longitude});'
-        )
+        for amenity in amenities:
+
+            selector = "node" if amenity == "waste_basket" else "nwr"
+
+            query_parts.append(
+                f'{selector}["amenity"="{amenity}"]'
+                f'(around:{radius},{latitude},{longitude});'
+            )
 
     query = (
         "[out:json][timeout:30];"
@@ -35,6 +46,9 @@ def fetch_resources(points, radius):
         headers=headers,
         timeout=40
     )
+
+    if response.status_code != 200:
+        print("Overpass error:", response.text[:1000])
 
     response.raise_for_status()
 
@@ -91,12 +105,16 @@ def get_resources(latitude, longitude, radius=2000):
     )
 
 
-def get_resources_along_route(coordinates, radius=350):
+def get_resources_along_route(
+    coordinates,
+    radius=350,
+    facility_type=None
+):
 
     if not coordinates:
         return []
 
-    count = min(12, len(coordinates))
+    count = min(6, len(coordinates))
 
     if count == 1:
         indices = [0]
@@ -112,6 +130,5 @@ def get_resources_along_route(coordinates, radius=350):
         lon, lat = coordinates[index]
         points.append((lat, lon))
 
-    return fetch_resources(points, radius)
+    return fetch_resources(points, radius, facility_type)
 
-        
