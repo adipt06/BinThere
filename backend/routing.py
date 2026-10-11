@@ -1,24 +1,38 @@
-import os
+
 import requests
+import os
+from pathlib import Path
 from dotenv import load_dotenv
 
-load_dotenv()
+load_dotenv(Path(__file__).with_name(".env"))
+
 MAPBOX_TOKEN = os.getenv("MAPBOX_TOKEN")
 
-def get_route(start_lat, start_lon, end_lat, end_lon):
-    
+
+def get_route(start_lat, start_lon, end_lat, end_lon, stop=None):
+
+    if not MAPBOX_TOKEN:
+        raise RuntimeError("MAPBOX_TOKEN is missing")
+
+    coordinates = f"{start_lon},{start_lat}"
+
+    if stop is not None:
+        coordinates += f";{stop['longitude']},{stop['latitude']}"
+
+    coordinates += f";{end_lon},{end_lat}"
+
     url = (
         "https://api.mapbox.com/directions/v5/mapbox/walking/"
-        f"{start_lon},{start_lat};{end_lon},{end_lat}"
+        + coordinates
     )
 
     params = {
         "access_token": MAPBOX_TOKEN,
         "geometries": "geojson",
-        "overview": "full",
+        "overview": "full"
     }
 
-    response = requests.get(url, params=params , timeout = 20)
+    response = requests.get(url, params=params, timeout=15)
     response.raise_for_status()
 
     data = response.json()
@@ -36,21 +50,11 @@ def get_route(start_lat, start_lon, end_lat, end_lon):
 
 
 if __name__ == "__main__":
-    start_lat = 40.5008
-    start_lon = -74.4474
+    result = get_route(
+        40.7661, -73.9772,
+        40.7681, -73.9819
+    )
 
-    end_lat = 40.5020
-    end_lon = -74.4500
-
-    route = get_route(start_lat, start_lon, end_lat, end_lon)
-
-    if route is not None:
-        print("Distance:", route["distance"], "meters")
-        print("Duration:", route["duration"], "seconds")
-        print("Geometry:", route["geometry"])
-    else:
-        print("No route found")
-
-
+    print(result)
 
 
