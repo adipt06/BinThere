@@ -1,13 +1,189 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>frontend</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f6f8f5" />
+
+  <title>ReRoute — Find Cleaner Routes</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <script type="module" src="/src/script.js"></script>
+</head>
+
+<body>
+  <main class="app">
+
+    <div id="map" aria-label="Interactive ReRoute map"></div>
+
+    <aside id="bin-panel">
+
+      <header class="brand-row">
+        <div class="brand-logo">♻</div>
+
+        <div class="brand-copy">
+          <h1>ReRoute</h1>
+          <p>Find a bin. Take a cleaner route.</p>
+        </div>
+
+        <span class="live-indicator"></span>
+      </header>
+
+      <section class="welcome">
+        <span class="eyebrow">YOUR NEIGHBORHOOD</span>
+        <h2>Find facilities<br />near you.</h2>
+
+        <p>
+          Discover nearby trash bins, restrooms,
+          and recycling locations.
+        </p>
+      </section>
+
+      <form id="search-form" class="search-box">
+        <span>⌕</span>
+
+        <input
+          id="bin-search"
+          type="search"
+          placeholder="Filter nearby facilities..."
+        />
+
+        <button id="search-button" type="submit">→</button>
+      </form>
+
+      <div class="gui-actions">
+
+        <button id="nearest-button" class="primary-button">
+          ◎ Find nearest trash bin
+        </button>
+
+        <button id="my-location-button" class="secondary-button">
+          ⌖ Return to my location
+        </button>
+
+      </div>
+
+      <section class="filter-section">
+
+        <label for="distance-filter">Search radius</label>
+
+        <select id="distance-filter">
+          <option value="500">500 meters</option>
+          <option value="1000" selected>1 kilometer</option>
+          <option value="2000">2 kilometers</option>
+          <option value="5000">5 kilometers</option>
+        </select>
+
+        <label for="facility-filter">Facility type</label>
+
+        <select id="facility-filter">
+          <option value="All">All facilities</option>
+          <option value="Trash Bin">Trash bins</option>
+          <option value="Restroom">Restrooms</option>
+          <option value="Recycling Location">Recycling</option>
+        </select>
+
+      </section>
+
+      <section class="destination-controls">
+
+        <h3>Smart Route Planner</h3>
+
+        <button id="choose-destination-button" type="button">
+          Pick destination on map
+        </button>
+
+        <p id="destination-hint" class="location-note">
+          Select a destination on the map to optimize your walk.
+        </p>
+
+        <label for="detour-filter">
+          Maximum extra walking (minutes)
+        </label>
+
+        <input
+          id="detour-filter"
+          type="number"
+          min="0"
+          max="30"
+          step="1"
+          value="5"
+        />
+
+        <button id="optimize-button" class="primary-button" type="button">
+          Find optimized walking route
+        </button>
+
+      </section>
+
+      <section id="directions-section" class="directions-section" hidden>
+
+        <div class="results-heading">
+          <div>
+            <h3>Walking Directions</h3>
+            <p id="directions-destination">Selected destination</p>
+          </div>
+
+          <button id="clear-route-button" class="clear-button">
+            ×
+          </button>
+        </div>
+
+        <div class="route-summary">
+          <div>
+            <strong id="route-duration">—</strong>
+            <span>Walking time</span>
+          </div>
+
+          <div>
+            <strong id="route-distance">—</strong>
+            <span>Distance</span>
+          </div>
+        </div>
+
+        <p id="detour-info" class="location-note"></p>
+
+      </section>
+
+      <section class="results-section">
+
+        <div class="results-heading">
+          <div>
+            <h3>Nearby Facilities</h3>
+            <p id="results-subtitle">Waiting for your location</p>
+          </div>
+
+          <span id="results-count" class="count-badge">
+            0 found
+          </span>
+        </div>
+
+        <div id="bin-results">
+          <div class="empty-state">
+            Allow location access to discover facilities.
+          </div>
+        </div>
+
+      </section>
+
+      <p id="bin-status" class="status-message" role="status">
+        Loading map...
+      </p>
+
+      <footer class="panel-footer">
+        ● A cleaner community starts here
+      </footer>
+
+    </aside>
+
+  </main>
+</body>
 </html>
