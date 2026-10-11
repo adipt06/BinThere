@@ -1,4 +1,4 @@
-# ReRoute: genuine 10-mile facility discovery
+# BinThere: genuine 10-mile facility discovery
 
 Implemented and verified on 2026-10-11. The existing snapshot loader, API, optimizer, Vite UI and Mapbox routing are retained.
 

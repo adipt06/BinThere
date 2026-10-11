@@ -10,3 +10,6 @@ dist/
 !.env.example
 playwright-report/
 test-results/
+
+# Runtime community submissions, reports and anonymous identities
+backend/data/*.sqlite3*

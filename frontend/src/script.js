@@ -1,3 +1,6 @@
+import { initializeTabs } from './tabs.js';
+import { initializeCommunity, appendCommunityReport } from './community.js';
+import { initializeAssistant } from './ai_assistant.js';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import './style.css';
 import { RequestLane, validCoordinate, validateRoute, distance, filterFacilities } from './state.js';
@@ -46,6 +49,7 @@ function cancelSelection() {
 }
 function togglePanel(collapsed) {
   $('bin-panel').classList.toggle('collapsed', collapsed);
+  $('map-status').hidden = !collapsed;
   $('panel-toggle').setAttribute('aria-expanded', String(!collapsed)); $('panel-toggle').textContent = collapsed ? 'Show controls' : 'Hide controls';
 }
 function selectOnMap(kind) {
@@ -63,8 +67,9 @@ function setLocation(kind, coordinates, name) {
     gpsGeneration++; start = location; removeMarker(startMarker);
     startMarker = new mapboxgl.Marker({ color: '#3987ff' }).setLngLat(coordinates).setPopup(new mapboxgl.Popup().setText(`Start: ${location.name}`)).addTo(map);
     $('start-hint').textContent = `Start: ${location.name}`; cancelSearch('destination'); $('facility-details').hidden = true; fetchFacilities();
+    status('Starting location set. Choose a nearby facility or plan a walk.');
   } else {
-    destination = location; removeMarker(destinationMarker);
+    $('route-planner').open = true; destination = location; removeMarker(destinationMarker);
     destinationMarker = new mapboxgl.Marker({ color: '#e34c4c' }).setLngLat(coordinates).setPopup(new mapboxgl.Popup().setText(`Destination: ${location.name}`)).addTo(map);
     $('destination-hint').textContent = `Destination: ${location.name}`; status('Destination selected. Get a direct route or add a facility stop.');
   }
@@ -86,7 +91,7 @@ async function fetchFacilities() {
     if (!Array.isArray(loaded) || loaded.some(f => !validCoordinate([f.longitude, f.latitude]) || typeof f.name !== 'string' || !colors[f.type])) throw new Error('Invalid facility response.');
     if (!Array.isArray(data) && (!Array.isArray(data.warnings) || data.warnings.some(w => typeof w !== 'string') || !data.categories || typeof data.categories !== 'object')) throw new Error('Invalid facility metadata.');
     facilityPartial = !Array.isArray(data) && data.partial === true; facilityWarnings = Array.isArray(data) ? [] : data.warnings; categoryStates = Array.isArray(data) ? {} : data.categories;
-    facilities = loaded; facilityState = 'ready'; renderFacilities();
+    facilities = loaded; facilityState = 'ready'; renderFacilities(); return true;
   } catch (error) {
     if (ticket.current() && error.name !== 'AbortError') {
       facilityState = 'error'; facilityError = error.message; renderFacilities();
@@ -94,23 +99,37 @@ async function fetchFacilities() {
   }
 }
 function facilityDescription(f) {
-  return [f.type, ...(f.source?.kind === 'local_snapshot' ? [`Saved OSM data: ${f.source.name}, retrieved ${f.source.retrieved_at}. © OpenStreetMap contributors, ODbL.`] : []), ...Object.entries(f.metadata || {}).map(([k, v]) => `${k.replaceAll('_', ' ')}: ${v}`), 'Access and opening hours are not verified.',
+  return [f.type, ...(f.source?.kind === 'community' ? ['Community submission; location and public access are user reported.'] : []), ...(f.source?.kind === 'local_snapshot' ? [`Saved OSM data: ${f.source.name}, retrieved ${f.source.retrieved_at}. © OpenStreetMap contributors, ODbL.`] : []), ...Object.entries(f.metadata || {}).map(([k, v]) => `${k.replaceAll('_', ' ')}: ${v}`), 'Access and opening hours are not verified.',
     ...(f.coordinate_source === 'area_center' ? ['Area center; entrance may differ.'] : [])].join(' · ');
+}
+function walkToFacility(f) {
+  if (!ready || !start) return status('Choose a starting location before requesting walking directions.');
+  setLocation('destination', [f.longitude, f.latitude], facilityName(f));
+  return requestRoute(false);
 }
 function showFacility(f) {
   const container = $('facility-details'); container.replaceChildren(); container.hidden = false;
   const heading = document.createElement('h3'); heading.textContent = facilityName(f);
   const details = document.createElement('p'); details.className = 'location-note'; details.textContent = facilityDescription(f);
   const coordinates = document.createElement('p'); coordinates.className = 'location-note'; coordinates.textContent = `${f.latitude.toFixed(5)}, ${f.longitude.toFixed(5)}`;
-  const button = document.createElement('button'); button.className = 'primary-button'; button.textContent = 'Walk to this facility';
-  button.onclick = () => { setLocation('destination', [f.longitude, f.latitude], facilityName(f)); requestRoute(false); };
+  const button = document.createElement('button'); button.type = 'button'; button.className = 'primary-button'; button.textContent = 'Walk to this facility';
+  button.onclick = () => walkToFacility(f);
   container.append(heading, details, coordinates, button);
+  appendCommunityReport(container, f, { apiBase: API_BASE, refreshed: fetchFacilities,
+    removed: () => {
+      if (destination && distance(destination.coordinates, [f.longitude, f.latitude]) < 1) {
+        destination = null; removeMarker(destinationMarker); destinationMarker = null;
+        $('destination-hint').textContent = 'Select a destination on the map to optimize your walk.';
+      }
+      clearRoute('Community facility removed after reaching the report threshold.');
+    } });
   if (window.innerWidth <= 600) togglePanel(false);
 }
 function facilityPopup(f) {
   const node = document.createElement('div'), title = document.createElement('strong'), body = document.createElement('p'), button = document.createElement('button');
   title.textContent = facilityName(f); body.textContent = facilityDescription(f); button.textContent = 'View facility details'; button.onclick = () => showFacility(f);
-  node.append(title, body, button); return new mapboxgl.Popup().setDOMContent(node);
+  const directions = document.createElement('button'); directions.type = 'button'; directions.textContent = 'Get walking directions'; directions.onclick = () => walkToFacility(f);
+  node.append(title, body, button, directions); return new mapboxgl.Popup().setDOMContent(node);
 }
 function renderFacilities() {
   const sources = [...new Map([...facilities.map(f => f.source), ...Object.values(categoryStates).map(s => s.source)].filter(s => s?.kind === 'local_snapshot').map(s => [s.name, s])).values()];
@@ -134,10 +153,13 @@ function renderFacilities() {
     container.textContent = categoryStates[selected]?.status === 'failed' ? `${selected} could not be loaded. Results are unavailable, not empty.` : facilityPartial ? 'No matches in the successfully searched areas. See incomplete-search warnings above.' : start ? 'No matching mapped facilities. Try a larger radius.' : 'Choose a starting location.';
   }
   for (const f of visible) {
-    const coordinates = [f.longitude, f.latitude], button = document.createElement('button'); button.className = 'bin-card';
+    const coordinates = [f.longitude, f.latitude], card = document.createElement('article'); card.className = 'bin-card';
+    const button = document.createElement('button'); button.type = 'button'; button.className = 'facility-card-details'; button.setAttribute('aria-label', `View details for ${facilityName(f)}`);
     const title = document.createElement('strong'); title.textContent = facilityName(f);
-    const description = document.createElement('span'); description.textContent = `${f.type} · ${formatDistance(distance(start.coordinates, coordinates))} straight-line${f.source?.kind === 'local_snapshot' ? ' · Saved OSM data' : ''}`;
-    button.append(title, description); button.onclick = () => showFacility(f); container.append(button);
+    const description = document.createElement('span'); description.textContent = `${f.type} · ${formatDistance(distance(start.coordinates, coordinates))} straight-line${f.source?.kind === 'local_snapshot' ? ' · Saved OSM data' : f.source?.kind === 'community' ? ' · Community submission' : ''}`;
+    button.append(title, description); button.onclick = () => showFacility(f);
+    const directions = document.createElement('button'); directions.type = 'button'; directions.className = 'facility-card-directions'; directions.textContent = 'Get walking directions'; directions.setAttribute('aria-label', `Get walking directions to ${facilityName(f)}`);
+    directions.onclick = () => walkToFacility(f); card.append(button, directions); container.append(card);
     const marker = new mapboxgl.Marker({ color: colors[f.type] }).setLngLat(coordinates).setPopup(facilityPopup(f)).addTo(map);
     marker.getElement().addEventListener('click', event => { event.stopPropagation(); showFacility(f); }); facilityMarkers.push(marker);
   }
@@ -270,3 +292,51 @@ async function initializeMap() {
 busy(['choose-start-button', 'choose-destination-button', 'my-location-button'], true);
 for (const kind of ['start', 'destination']) $(`${kind}-search-form`).querySelector('button').disabled = true;
 initializeMap();
+
+const selectView = initializeTabs({ resizeMap: () => map?.resize?.(), suspendNavigation: cancelSelection });
+initializeAssistant({ apiBase: API_BASE, selectView, navigate: async (type, item) => {
+  $('facility-filter').value = type; $('bin-search').value = ''; $('facility-details').hidden = true; togglePanel(false);
+  if (!start) { renderFacilities(); status('Choose a starting location to find disposal facilities.'); return; }
+  const selectedStart = start;
+  // Search the local demo radius once, retaining the trip and existing route layers.
+  if (type === 'Recycling Location') {
+    $('distance-filter').value = '16093';
+    status('Finding the closest mapped recycling location within 10 miles…');
+    const loaded = await fetchFacilities();
+    if (!loaded || start !== selectedStart || $('facility-filter').value !== type) return;
+  } else {
+    if (facilityState !== 'ready' && !await fetchFacilities()) return;
+    if (start !== selectedStart || $('facility-filter').value !== type) return;
+    renderFacilities();
+  }
+  const nearest = filterFacilities(facilities, type, '', start.coordinates)
+    .find(f => !['private', 'no'].includes((f.metadata?.access || '').toLowerCase()));
+  if (!nearest) {
+    status(facilityPartial ? 'No matching location in the covered search area. Coverage is incomplete; see facility warnings.' : 'No matching mapped location found in this search radius.');
+    return;
+  }
+  showFacility(nearest);
+  if (type === 'Recycling Location') {
+    const acceptance = document.createElement('p'); acceptance.className = 'location-note';
+    acceptance.textContent = `Acceptance of ${item.name} is unverified. Contact the operator before bringing it.`;
+    $('facility-details').append(acceptance);
+  }
+  map?.flyTo({ center: [nearest.longitude, nearest.latitude], zoom: 15, animate: !reducedMotion });
+  const label = type === 'Trash Bin' ? 'trash bin' : 'recycling location';
+  status(`Closest mapped ${label} by straight-line distance: ${facilityName(nearest)}. ${type === 'Recycling Location' ? `Acceptance of ${item.name} is unverified; contact the operator before bringing it.` : 'Check mapped access.'}${facilityPartial ? ' Search coverage is incomplete.' : ''}`);
+} });
+
+
+initializeCommunity({ apiBase: API_BASE, published: async (facility) => {
+  selectView('navigation');
+  if (ready && !start) setLocation('start', [facility.longitude, facility.latitude], 'New community facility');
+  await fetchFacilities();
+  if (ready) {
+    // An address can be outside the current search radius: still show the submitted point.
+    if (!facilities.some(f => f.id === facility.id)) {
+      const marker = new mapboxgl.Marker({ color: colors[facility.type] }).setLngLat([facility.longitude, facility.latitude]).setPopup(facilityPopup(facility)).addTo(map);
+      marker.getElement().addEventListener('click', event => { event.stopPropagation(); showFacility(facility); }); facilityMarkers.push(marker);
+    }
+    showFacility(facility); map.flyTo({ center: [facility.longitude, facility.latitude], zoom: 16, animate: !reducedMotion });
+  }
+} });

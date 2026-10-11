@@ -139,7 +139,7 @@ def build(args):
             query = f'[out:json][timeout:25];{osm._selector(tag)}["amenity"="{tag}"]({south},{west},{north},{east});out {output};'
             started = time.monotonic()
             response = requests.post(endpoint, data={'data':query}, timeout=(3,100),
-                headers={'User-Agent':os.getenv('OVERPASS_USER_AGENT','ReRoute-HackRU/1.0 (environmental walking navigation)'), 'Accept':'application/json'})
+                headers={'User-Agent':os.getenv('OVERPASS_USER_AGENT','BinThere-HackRU/1.0 (environmental walking navigation)'), 'Accept':'application/json'})
             print(f'{category}: host={urlsplit(endpoint).hostname} HTTP={response.status_code} elapsed={time.monotonic()-started:.2f}s query={query}', flush=True)
             if response.status_code != 200:
                 raise ValueError(f'{category} download failed with HTTP {response.status_code}; stopped without writing snapshot.')

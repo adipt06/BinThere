@@ -30,7 +30,7 @@ def obtain_extract(path, url, refresh=False):
     path.parent.mkdir(parents=True,exist_ok=True)
     temporary=path.with_name(path.name+'.download.osm.pbf')
     try:
-        response=requests.get(url,stream=True,timeout=(5,60),headers={'User-Agent':'ReRoute-HackRU/1.0 (OSM snapshot generation)'})
+        response=requests.get(url,stream=True,timeout=(5,60),headers={'User-Agent':'BinThere-HackRU/1.0 (OSM snapshot generation)'})
         response.raise_for_status()
         digest=hashlib.md5()
         length=int(response.headers.get('Content-Length',0))

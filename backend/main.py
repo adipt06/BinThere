@@ -1,9 +1,9 @@
-"""ReRoute HTTP contracts. Launch from root or from backend/."""
+"""BinThere HTTP contracts. Launch from root or from backend/."""
 import os
 from pathlib import Path
 from typing import Literal
 from dotenv import load_dotenv
-from fastapi import FastAPI, HTTPException, Query, Request
+from fastapi import FastAPI, HTTPException, Query, Request, UploadFile, File, Form
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel, Field
@@ -14,23 +14,36 @@ try:
     from .routing import get_route, valid_coordinate, MAPBOX_TOKEN
     from .optimizer import find_best_route
     from .services import ServiceError, request_json
+    from . import gemini_service
+    from .ai_models import WasteAnalysis
+    from .community_api import router as community_router
 except ImportError:
     from osm_service import get_resources, get_resources_report, _distance
     from routing import get_route, valid_coordinate, MAPBOX_TOKEN
     from optimizer import find_best_route
     from services import ServiceError, request_json
+    import gemini_service
+    from ai_models import WasteAnalysis
+    from community_api import router as community_router
 
-app = FastAPI(title='ReRoute API')
+app = FastAPI(title='BinThere API')
+app.include_router(community_router)
 origins = os.getenv('CORS_ORIGINS', 'http://localhost:5173,http://127.0.0.1:5173,http://localhost:4173,http://127.0.0.1:4173')
 app.add_middleware(CORSMiddleware, allow_origins=[o.strip() for o in origins.split(',') if o.strip()],
-                   allow_methods=['GET', 'POST'], allow_headers=['Content-Type'])
+                   allow_methods=['GET', 'POST'], allow_headers=['Content-Type'], allow_credentials=True)
 
 
 @app.exception_handler(ServiceError)
 async def service_error(_request: Request, error: ServiceError):
     content = {'detail': str(error)}
     if hasattr(error, 'coverage'): content['coverage'] = error.coverage
-    return JSONResponse(status_code=error.status, content=content)
+    headers = None
+    if error.reason in ('rate_limit', 'daily_quota_exhausted'):
+        content['code'] = error.reason
+        if error.retry_after:
+            content['retry_after_seconds'] = error.retry_after
+            headers = {'Retry-After': str(error.retry_after)}
+    return JSONResponse(status_code=error.status, content=content, headers=headers)
 
 
 @app.get('/')
@@ -138,3 +151,32 @@ def nearest_bin(latitude: float = Query(ge=-90, le=90), longitude: float = Query
             'coverage': discovery.get('coverage', 'full'), 'search_complete': discovery.get('complete', True),
             'warnings': discovery['warnings'] + ['Shortest walking time among checked nearby bins; access is unverified.']
                         + (['Some bins were not checked.'] if len(bins) > limit or failures else [])}
+
+
+@app.middleware('http')
+async def bound_ai_upload(request: Request, call_next):
+    if request.url.path in ('/ai/analyze', '/community/recognize'):
+        chunks, size = [], 0
+        async for chunk in request.stream():
+            size += len(chunk)
+            if size > gemini_service.MAX_BODY_BYTES:
+                return JSONResponse(status_code=413, content={'detail': 'AI request is too large. Use an image no larger than 8 MB.'})
+            chunks.append(chunk)
+        request._body = b''.join(chunks)
+    return await call_next(request)
+
+
+@app.post('/ai/analyze', response_model=WasteAnalysis)
+def analyze_waste(question: str = Form(default='', max_length=2000),
+                  place: str = Form(default='', max_length=120),
+                  image: UploadFile | None = File(default=None)):
+    question, place = question.strip(), place.strip()
+    if image is None and not question:
+        raise ServiceError('Add an image, a question, or both.', 422)
+    content = mime = None
+    if image is not None:
+        try:
+            content, mime = gemini_service.validate_image(image.file.read(gemini_service.MAX_IMAGE_BYTES + 1), image.content_type)
+        finally:
+            image.file.close()
+    return gemini_service.analyze(question, place, content, mime)
